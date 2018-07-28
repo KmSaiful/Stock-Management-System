@@ -44,11 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategorySetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategorySetup.Designer.cs">
+      <DependentUpon>CategorySetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Company Setup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Company Setup.Designer.cs">
       <DependentUpon>Company Setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemSetup.Designer.cs">
+      <DependentUpon>ItemSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemsSummary.cs">
       <SubType>Form</SubType>
@@ -88,11 +100,17 @@
     <Compile Include="Stock_In.Designer.cs">
       <DependentUpon>Stock_In.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CategorySetup.resx">
+      <DependentUpon>CategorySetup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Company Setup.resx">
       <DependentUpon>Company Setup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemSetup.resx">
+      <DependentUpon>ItemSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInPage.resx">
       <DependentUpon>LogInPage.cs</DependentUpon>

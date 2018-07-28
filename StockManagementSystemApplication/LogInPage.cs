@@ -16,5 +16,13 @@ namespace StockManagementSystemApplication
         {
             InitializeComponent();
         }
+
+        private void LogInButton_Click(object sender, EventArgs e)
+        {
+            HomePage homePage = new StockManagementSystemApplication.HomePage();
+            homePage.Show();
+            //LogInPage login = new LogInPage();
+            //login.Close();
+        }
     }
 }
