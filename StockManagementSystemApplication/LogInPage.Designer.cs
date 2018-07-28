@@ -28,46 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.LogInButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // passwordTextBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Email Id";
-            // 
-            // emailTextBox
-            // 
-            this.emailTextBox.Location = new System.Drawing.Point(217, 90);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(171, 20);
-            this.emailTextBox.TabIndex = 1;
+            this.passwordTextBox.Location = new System.Drawing.Point(216, 100);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(171, 20);
+            this.passwordTextBox.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 121);
+            this.label2.Location = new System.Drawing.Point(113, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Enter Password";
             // 
-            // passwordTextBox
+            // usernameTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(217, 116);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(171, 20);
-            this.passwordTextBox.TabIndex = 1;
+            this.usernameTextBox.Location = new System.Drawing.Point(216, 62);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(171, 20);
+            this.usernameTextBox.TabIndex = 1;
             // 
             // label3
             // 
@@ -78,18 +67,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "User Name";
             // 
-            // userNameTextBox
-            // 
-            this.userNameTextBox.Location = new System.Drawing.Point(217, 60);
-            this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(171, 20);
-            this.userNameTextBox.TabIndex = 1;
-            // 
             // LogInButton
             // 
-            this.LogInButton.Location = new System.Drawing.Point(312, 164);
+            this.LogInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogInButton.Location = new System.Drawing.Point(216, 138);
             this.LogInButton.Name = "LogInButton";
-            this.LogInButton.Size = new System.Drawing.Size(75, 23);
+            this.LogInButton.Size = new System.Drawing.Size(171, 42);
             this.LogInButton.TabIndex = 2;
             this.LogInButton.Text = "Log In";
             this.LogInButton.UseVisualStyleBackColor = true;
@@ -100,12 +83,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 257);
             this.Controls.Add(this.LogInButton);
-            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.userNameTextBox);
-            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Name = "LogInPage";
             this.Text = "Sotck management System (Log in Page)";
             this.ResumeLayout(false);
@@ -115,12 +96,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.Button LogInButton;
     }
 }
