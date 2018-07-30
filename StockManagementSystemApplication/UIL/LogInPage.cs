@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace StockManagementSystemApplication
 {
     public partial class LogInPage : Form
     {
+        
         public LogInPage()
         {
             InitializeComponent();
@@ -19,10 +21,13 @@ namespace StockManagementSystemApplication
 
         private void LogInButton_Click(object sender, EventArgs e)
         {
-            HomePage homePage = new StockManagementSystemApplication.HomePage();
+            LogInPage login = new LogInPage();
+            login.Hide();
+            HomePage homePage = new HomePage();
             homePage.Show();
-            //LogInPage login = new LogInPage();
-            //login.Close();
+           
         }
+
+       
     }
 }

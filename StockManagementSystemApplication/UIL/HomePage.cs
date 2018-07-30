@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StockManagementSystemApplication.UIL;
 
 namespace StockManagementSystemApplication
 {
@@ -27,7 +28,7 @@ namespace StockManagementSystemApplication
 
         private void categorySetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CategorySetup catagory = new CategorySetup();
+            CatagorySetup catagory = new CatagorySetup();
             catagory.Show();
         }
 
@@ -69,7 +70,7 @@ namespace StockManagementSystemApplication
 
         private void setupCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CategorySetup catagory = new CategorySetup();
+            CatagorySetup catagory = new CatagorySetup();
             catagory.Show();
         }
 

@@ -70,7 +70,7 @@
             // LogInButton
             // 
             this.LogInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogInButton.Location = new System.Drawing.Point(216, 138);
+            this.LogInButton.Location = new System.Drawing.Point(37, 138);
             this.LogInButton.Name = "LogInButton";
             this.LogInButton.Size = new System.Drawing.Size(171, 42);
             this.LogInButton.TabIndex = 2;

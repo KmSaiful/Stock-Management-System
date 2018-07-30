@@ -44,75 +44,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategorySetup.cs">
+    <Compile Include="BLL\CatagoryManager.cs" />
+    <Compile Include="BLL\CompanyManager.cs" />
+    <Compile Include="BLL\ItemsManager.cs" />
+    <Compile Include="BLL\ItemsSummeryManager.cs" />
+    <Compile Include="BLL\LogInPageManager.cs" />
+    <Compile Include="BLL\SalesDatesManager.cs" />
+    <Compile Include="BLL\StockInManager.cs" />
+    <Compile Include="BLL\StockOutManager.cs" />
+    <Compile Include="DAL\CompanyRepository.cs" />
+    <Compile Include="DAL\ItemsRepository.cs" />
+    <Compile Include="DAL\ItemsSummeryRepository.cs" />
+    <Compile Include="DAL\LogInPageRepository.cs" />
+    <Compile Include="DAL\SalesDatesRepository.cs" />
+    <Compile Include="DAL\StockInRepository.cs" />
+    <Compile Include="DAL\StockOutRepository.cs" />
+    <Compile Include="Modals\Catagory.cs" />
+    <Compile Include="DAL\CatagoryRepository.cs" />
+    <Compile Include="Modals\Company.cs" />
+    <Compile Include="Modals\Items.cs" />
+    <Compile Include="Modals\ItemsSummeryClass.cs" />
+    <Compile Include="Modals\LogInPageClass.cs" />
+    <Compile Include="Modals\SalesDatesClass.cs" />
+    <Compile Include="Modals\StockInClass.cs" />
+    <Compile Include="Modals\StockOutClass.cs" />
+    <Compile Include="UIL\CatagorySetup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategorySetup.Designer.cs">
-      <DependentUpon>CategorySetup.cs</DependentUpon>
+    <Compile Include="UIL\CatagorySetup.Designer.cs">
+      <DependentUpon>CatagorySetup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Company Setup.cs">
+    <Compile Include="UIL\Company Setup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Company Setup.Designer.cs">
+    <Compile Include="UIL\Company Setup.Designer.cs">
       <DependentUpon>Company Setup.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemSetup.cs">
+    <Compile Include="UIL\ItemSetup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemSetup.Designer.cs">
+    <Compile Include="UIL\ItemSetup.Designer.cs">
       <DependentUpon>ItemSetup.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemsSummary.cs">
+    <Compile Include="UIL\ItemsSummary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemsSummary.Designer.cs">
+    <Compile Include="UIL\ItemsSummary.Designer.cs">
       <DependentUpon>ItemsSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogInPage.cs">
+    <Compile Include="UIL\LogInPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogInPage.Designer.cs">
+    <Compile Include="UIL\LogInPage.Designer.cs">
       <DependentUpon>LogInPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
+    <Compile Include="UIL\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
+    <Compile Include="UIL\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesDates.cs">
+    <Compile Include="UIL\SalesDates.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalesDates.Designer.cs">
+    <Compile Include="UIL\SalesDates.Designer.cs">
       <DependentUpon>SalesDates.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock_Out.cs">
+    <Compile Include="UIL\Stock_Out.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock_Out.Designer.cs">
+    <Compile Include="UIL\Stock_Out.Designer.cs">
       <DependentUpon>Stock_Out.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock_In.cs">
+    <Compile Include="UIL\Stock_In.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock_In.Designer.cs">
+    <Compile Include="UIL\Stock_In.Designer.cs">
       <DependentUpon>Stock_In.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CategorySetup.resx">
-      <DependentUpon>CategorySetup.cs</DependentUpon>
+    <EmbeddedResource Include="UIL\CatagorySetup.resx">
+      <DependentUpon>CatagorySetup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Company Setup.resx">
+    <EmbeddedResource Include="UIL\Company Setup.resx">
       <DependentUpon>Company Setup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePage.resx">
+    <EmbeddedResource Include="UIL\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemSetup.resx">
+    <EmbeddedResource Include="UIL\ItemSetup.resx">
       <DependentUpon>ItemSetup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogInPage.resx">
+    <EmbeddedResource Include="UIL\LogInPage.resx">
       <DependentUpon>LogInPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,16 +148,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ItemsSummary.resx">
+    <EmbeddedResource Include="UIL\ItemsSummary.resx">
       <DependentUpon>ItemsSummary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesDates.resx">
+    <EmbeddedResource Include="UIL\SalesDates.resx">
       <DependentUpon>SalesDates.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stock_In.resx">
+    <EmbeddedResource Include="UIL\Stock_In.resx">
       <DependentUpon>Stock_In.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stock_Out.resx">
+    <EmbeddedResource Include="UIL\Stock_Out.resx">
       <DependentUpon>Stock_Out.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -149,5 +173,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

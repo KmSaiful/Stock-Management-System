@@ -1,6 +1,6 @@
-﻿namespace StockManagementSystemApplication
+﻿namespace StockManagementSystemApplication.UIL
 {
-    partial class CategorySetup
+    partial class CatagorySetup
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.CatagoryNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -44,12 +44,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // NameTextBox
+            // CatagoryNameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(216, 41);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(193, 20);
-            this.NameTextBox.TabIndex = 0;
+            this.CatagoryNameTextBox.Location = new System.Drawing.Point(216, 41);
+            this.CatagoryNameTextBox.Name = "CatagoryNameTextBox";
+            this.CatagoryNameTextBox.Size = new System.Drawing.Size(193, 20);
+            this.CatagoryNameTextBox.TabIndex = 0;
             // 
             // SaveButton
             // 
@@ -59,6 +59,7 @@
             this.SaveButton.TabIndex = 1;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // dataGridView1
             // 
@@ -75,7 +76,7 @@
             this.ClientSize = new System.Drawing.Size(571, 319);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.CatagoryNameTextBox);
             this.Controls.Add(this.label1);
             this.Name = "CategorySetup";
             this.Text = "CategorySetup";
@@ -88,7 +89,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.TextBox CatagoryNameTextBox;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
