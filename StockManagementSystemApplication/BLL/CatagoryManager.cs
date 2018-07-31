@@ -16,7 +16,7 @@ namespace StockManagementSystemApplication.BLL
         CatagoryRepository catagoryRepository = new CatagoryRepository();
         public bool Add(Catagory catagory)
         {
-            if (catagory != null && catagory.Name.Length < 3)
+            if (catagory == null && catagory.Name.Length < 3)
             {
                 throw new Exception("Invalid Name");
             }

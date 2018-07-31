@@ -28,24 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.catagorycomboBox = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            this.catagoryComboBox = new System.Windows.Forms.ComboBox();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stock_Management_System_currentDataSet = new StockManagementSystemApplication.Stock_Management_System_currentDataSet();
             this.label6 = new System.Windows.Forms.Label();
             this.ReordertextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.CompanycomboBox = new System.Windows.Forms.ComboBox();
+            this.companyComboBox = new System.Windows.Forms.ComboBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stock_Management_System_currentDataSet1 = new StockManagementSystemApplication.Stock_Management_System_currentDataSet1();
             this.label2 = new System.Windows.Forms.Label();
-            this.ItemcomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.ItemNameTextBox = new System.Windows.Forms.TextBox();
+            this.categoryTableAdapter = new StockManagementSystemApplication.Stock_Management_System_currentDataSetTableAdapters.CategoryTableAdapter();
+            this.companyTableAdapter = new StockManagementSystemApplication.Stock_Management_System_currentDataSet1TableAdapters.CompanyTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stock_Management_System_currentDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stock_Management_System_currentDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // catagorycomboBox
+            // catagoryComboBox
             // 
-            this.catagorycomboBox.FormattingEnabled = true;
-            this.catagorycomboBox.Location = new System.Drawing.Point(229, 69);
-            this.catagorycomboBox.Name = "catagorycomboBox";
-            this.catagorycomboBox.Size = new System.Drawing.Size(210, 21);
-            this.catagorycomboBox.TabIndex = 0;
+            this.catagoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoryBindingSource, "Category Name", true));
+            this.catagoryComboBox.DataSource = this.categoryBindingSource;
+            this.catagoryComboBox.DisplayMember = "Category Name";
+            this.catagoryComboBox.FormattingEnabled = true;
+            this.catagoryComboBox.Location = new System.Drawing.Point(229, 69);
+            this.catagoryComboBox.Name = "catagoryComboBox";
+            this.catagoryComboBox.Size = new System.Drawing.Size(210, 21);
+            this.catagoryComboBox.TabIndex = 0;
+            this.catagoryComboBox.ValueMember = "Id";
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataMember = "Category";
+            this.categoryBindingSource.DataSource = this.stock_Management_System_currentDataSet;
+            // 
+            // stock_Management_System_currentDataSet
+            // 
+            this.stock_Management_System_currentDataSet.DataSetName = "Stock_Management_System_currentDataSet";
+            this.stock_Management_System_currentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label6
             // 
@@ -72,13 +97,27 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Reorder Level";
             // 
-            // CompanycomboBox
+            // companyComboBox
             // 
-            this.CompanycomboBox.FormattingEnabled = true;
-            this.CompanycomboBox.Location = new System.Drawing.Point(229, 96);
-            this.CompanycomboBox.Name = "CompanycomboBox";
-            this.CompanycomboBox.Size = new System.Drawing.Size(211, 21);
-            this.CompanycomboBox.TabIndex = 1;
+            this.companyComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.companyBindingSource, "Id", true));
+            this.companyComboBox.DataSource = this.companyBindingSource;
+            this.companyComboBox.DisplayMember = "Company Name";
+            this.companyComboBox.FormattingEnabled = true;
+            this.companyComboBox.Location = new System.Drawing.Point(229, 96);
+            this.companyComboBox.Name = "companyComboBox";
+            this.companyComboBox.Size = new System.Drawing.Size(211, 21);
+            this.companyComboBox.TabIndex = 1;
+            this.companyComboBox.ValueMember = "Id";
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataMember = "Company";
+            this.companyBindingSource.DataSource = this.stock_Management_System_currentDataSet1;
+            // 
+            // stock_Management_System_currentDataSet1
+            // 
+            this.stock_Management_System_currentDataSet1.DataSetName = "Stock_Management_System_currentDataSet1";
+            this.stock_Management_System_currentDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -88,14 +127,6 @@
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 21;
             this.label2.Text = "Item";
-            // 
-            // ItemcomboBox
-            // 
-            this.ItemcomboBox.FormattingEnabled = true;
-            this.ItemcomboBox.Location = new System.Drawing.Point(229, 123);
-            this.ItemcomboBox.Name = "ItemcomboBox";
-            this.ItemcomboBox.Size = new System.Drawing.Size(211, 21);
-            this.ItemcomboBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -114,23 +145,44 @@
             this.SaveButton.TabIndex = 4;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // ItemNameTextBox
+            // 
+            this.ItemNameTextBox.Location = new System.Drawing.Point(229, 124);
+            this.ItemNameTextBox.Name = "ItemNameTextBox";
+            this.ItemNameTextBox.Size = new System.Drawing.Size(209, 20);
+            this.ItemNameTextBox.TabIndex = 28;
+            // 
+            // categoryTableAdapter
+            // 
+            this.categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // companyTableAdapter
+            // 
+            this.companyTableAdapter.ClearBeforeFill = true;
             // 
             // ItemSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 309);
+            this.Controls.Add(this.ItemNameTextBox);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.catagorycomboBox);
+            this.Controls.Add(this.catagoryComboBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ReordertextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.CompanycomboBox);
+            this.Controls.Add(this.companyComboBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ItemcomboBox);
             this.Controls.Add(this.label1);
             this.Name = "ItemSetup";
             this.Text = "ItemSetup";
+            this.Load += new System.EventHandler(this.ItemSetup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stock_Management_System_currentDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stock_Management_System_currentDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,14 +190,20 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox catagorycomboBox;
+        private System.Windows.Forms.ComboBox catagoryComboBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox ReordertextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CompanycomboBox;
+        private System.Windows.Forms.ComboBox companyComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox ItemcomboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.TextBox ItemNameTextBox;
+        private Stock_Management_System_currentDataSet stock_Management_System_currentDataSet;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
+        private Stock_Management_System_currentDataSetTableAdapters.CategoryTableAdapter categoryTableAdapter;
+        private Stock_Management_System_currentDataSet1 stock_Management_System_currentDataSet1;
+        private System.Windows.Forms.BindingSource companyBindingSource;
+        private Stock_Management_System_currentDataSet1TableAdapters.CompanyTableAdapter companyTableAdapter;
     }
 }

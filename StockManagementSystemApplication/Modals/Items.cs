@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystemApplication.Modals
 {
-    class Items
+    public class Items
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int CatagoryId { get; set; }
+        public int CompanyId { get; set; }
+        public int RecordLevel { get; set; }
     }
 }
