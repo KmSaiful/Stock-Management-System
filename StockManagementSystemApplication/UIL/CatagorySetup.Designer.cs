@@ -33,23 +33,24 @@
             this.CatagoryNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.catagorydataGridView = new System.Windows.Forms.DataGridView();
-            this.catagoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.catagoryRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catagoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.catagoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.catagoryRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.catagorydataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catagoryRepositoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 34);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(48, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
@@ -62,6 +63,7 @@
             // 
             // SaveButton
             // 
+            this.SaveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Location = new System.Drawing.Point(226, 70);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 31);
@@ -81,16 +83,8 @@
             this.catagorydataGridView.DataSource = this.catagoryBindingSource1;
             this.catagorydataGridView.Location = new System.Drawing.Point(56, 107);
             this.catagorydataGridView.Name = "catagorydataGridView";
-            this.catagorydataGridView.Size = new System.Drawing.Size(245, 202);
+            this.catagorydataGridView.Size = new System.Drawing.Size(245, 278);
             this.catagorydataGridView.TabIndex = 2;
-            // 
-            // catagoryBindingSource
-            // 
-            this.catagoryBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Catagory);
-            // 
-            // catagoryRepositoryBindingSource
-            // 
-            this.catagoryRepositoryBindingSource.DataSource = typeof(StockManagementSystemApplication.DAL.CatagoryRepository);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -108,10 +102,19 @@
             // 
             this.catagoryBindingSource1.DataSource = typeof(StockManagementSystemApplication.Modals.Catagory);
             // 
+            // catagoryBindingSource
+            // 
+            this.catagoryBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Catagory);
+            // 
+            // catagoryRepositoryBindingSource
+            // 
+            this.catagoryRepositoryBindingSource.DataSource = typeof(StockManagementSystemApplication.DAL.CatagoryRepository);
+            // 
             // CatagorySetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(364, 431);
             this.Controls.Add(this.catagorydataGridView);
             this.Controls.Add(this.SaveButton);
@@ -120,9 +123,9 @@
             this.Name = "CatagorySetup";
             this.Text = "CategorySetup";
             ((System.ComponentModel.ISupportInitialize)(this.catagorydataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catagoryRepositoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

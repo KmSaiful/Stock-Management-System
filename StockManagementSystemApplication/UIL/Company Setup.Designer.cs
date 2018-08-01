@@ -33,8 +33,8 @@
             this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CompanyDataGridView = new System.Windows.Forms.DataGridView();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CompanyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -42,24 +42,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 37);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(35, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(48, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
             // CompanyNameTextBox
             // 
-            this.CompanyNameTextBox.Location = new System.Drawing.Point(129, 32);
+            this.CompanyNameTextBox.Location = new System.Drawing.Point(102, 32);
             this.CompanyNameTextBox.Name = "CompanyNameTextBox";
             this.CompanyNameTextBox.Size = new System.Drawing.Size(193, 20);
             this.CompanyNameTextBox.TabIndex = 1;
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(239, 64);
+            this.SaveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveButton.Location = new System.Drawing.Point(207, 64);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(85, 23);
+            this.SaveButton.Size = new System.Drawing.Size(90, 32);
             this.SaveButton.TabIndex = 2;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -72,14 +74,10 @@
             this.CompanyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.companyNameDataGridViewTextBoxColumn});
             this.CompanyDataGridView.DataSource = this.companyBindingSource;
-            this.CompanyDataGridView.Location = new System.Drawing.Point(65, 144);
+            this.CompanyDataGridView.Location = new System.Drawing.Point(38, 114);
             this.CompanyDataGridView.Name = "CompanyDataGridView";
-            this.CompanyDataGridView.Size = new System.Drawing.Size(257, 244);
+            this.CompanyDataGridView.Size = new System.Drawing.Size(259, 273);
             this.CompanyDataGridView.TabIndex = 3;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Company);
             // 
             // companyNameDataGridViewTextBoxColumn
             // 
@@ -88,11 +86,16 @@
             this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
             this.companyNameDataGridViewTextBoxColumn.Width = 200;
             // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Company);
+            // 
             // CompanySetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 420);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(330, 420);
             this.Controls.Add(this.CompanyDataGridView);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CompanyNameTextBox);
