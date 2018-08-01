@@ -28,17 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CatagoryNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.catagorydataGridView = new System.Windows.Forms.DataGridView();
+            this.catagoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.catagoryRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catagoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.catagorydataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagoryRepositoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(170, 45);
+            this.label1.Location = new System.Drawing.Point(62, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -46,14 +55,14 @@
             // 
             // CatagoryNameTextBox
             // 
-            this.CatagoryNameTextBox.Location = new System.Drawing.Point(216, 41);
+            this.CatagoryNameTextBox.Location = new System.Drawing.Point(108, 30);
             this.CatagoryNameTextBox.Name = "CatagoryNameTextBox";
             this.CatagoryNameTextBox.Size = new System.Drawing.Size(193, 20);
             this.CatagoryNameTextBox.TabIndex = 0;
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(334, 81);
+            this.SaveButton.Location = new System.Drawing.Point(226, 70);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 31);
             this.SaveButton.TabIndex = 1;
@@ -61,26 +70,59 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // dataGridView1
+            // catagorydataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(93, 135);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(418, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.catagorydataGridView.AllowUserToAddRows = false;
+            this.catagorydataGridView.AutoGenerateColumns = false;
+            this.catagorydataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.catagorydataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.categoryNameDataGridViewTextBoxColumn});
+            this.catagorydataGridView.DataSource = this.catagoryBindingSource1;
+            this.catagorydataGridView.Location = new System.Drawing.Point(56, 107);
+            this.catagorydataGridView.Name = "catagorydataGridView";
+            this.catagorydataGridView.Size = new System.Drawing.Size(245, 202);
+            this.catagorydataGridView.TabIndex = 2;
             // 
-            // CategorySetup
+            // catagoryBindingSource
+            // 
+            this.catagoryBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Catagory);
+            // 
+            // catagoryRepositoryBindingSource
+            // 
+            this.catagoryRepositoryBindingSource.DataSource = typeof(StockManagementSystemApplication.DAL.CatagoryRepository);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // categoryNameDataGridViewTextBoxColumn
+            // 
+            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
+            // 
+            // catagoryBindingSource1
+            // 
+            this.catagoryBindingSource1.DataSource = typeof(StockManagementSystemApplication.Modals.Catagory);
+            // 
+            // CatagorySetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 319);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(364, 431);
+            this.Controls.Add(this.catagorydataGridView);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CatagoryNameTextBox);
             this.Controls.Add(this.label1);
-            this.Name = "CategorySetup";
+            this.Name = "CatagorySetup";
             this.Text = "CategorySetup";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagorydataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagoryRepositoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,6 +133,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CatagoryNameTextBox;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView catagorydataGridView;
+        private System.Windows.Forms.BindingSource catagoryRepositoryBindingSource;
+        private System.Windows.Forms.BindingSource catagoryBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource catagoryBindingSource1;
     }
 }

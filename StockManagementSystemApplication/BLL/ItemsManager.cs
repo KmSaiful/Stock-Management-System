@@ -2,6 +2,7 @@
 using StockManagementSystemApplication.Modals;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,19 @@ namespace StockManagementSystemApplication.BLL
             return isAdded;
 
         }
+        public DataTable GetCompany(Items item)
+        {
+            DataTable dt = new DataTable();
+            dt = itemsRepository.GetCompany(item);
+            return dt;
+        }
+        public DataTable GetCatagory(Items item)
+        {
+            DataTable dt = new DataTable();
+            dt = itemsRepository.GetCatagory(item);
+            return dt;
+        }
+
 
 
         

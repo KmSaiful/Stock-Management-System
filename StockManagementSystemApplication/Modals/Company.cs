@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystemApplication.Modals
 {
-    class Company
+    public class Company
     {
+        public long Id { get; set; }
+        public string CompanyName { get; set; }
     }
 }

@@ -13,5 +13,8 @@ namespace StockManagementSystemApplication.Modals
         public int CatagoryId { get; set; }
         public int CompanyId { get; set; }
         public int RecordLevel { get; set; }
+        public string CategoryName { get; set; }
+        public string CompanyName{get;set;}
+
     }
 }

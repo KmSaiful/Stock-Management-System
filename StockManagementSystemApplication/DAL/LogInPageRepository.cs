@@ -1,12 +1,32 @@
-﻿using System;
+﻿using StockManagementSystemApplication.Modals;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace StockManagementSystemApplication.DAL
 {
-    class LogInPageRepository
+    public class LogInPageRepository
     {
+        public bool Check(LogInPageClass login)
+        {
+            SqlConnection con = new SqlConnection(@"server=TANVIR; database=Stock Management System current;integrated security=true");
+            string query = @"SELECT Count(*) FROM [dbo].[User] Where [UserName]='" + login.Username + "' and [Password]='" + login.Password + "'";
+            con.Open();            
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            bool isAdded =dt.Rows[0][0].ToString() == "1";
+            con.Close();
+            return isAdded;
+            
+            
+
+        }
+
+        
     }
 }

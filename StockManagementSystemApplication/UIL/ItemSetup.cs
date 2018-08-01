@@ -18,12 +18,16 @@ namespace StockManagementSystemApplication
         public ItemSetup()
         {
             InitializeComponent();
+
+
         }
+        ItemsManager itemManager = new ItemsManager();
+        Items item = new Items();
         
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            Items item = new Items();
+            
             
             
             if (ItemNameTextBox.Text != null && ItemNameTextBox.Text.Length > 3)
@@ -68,7 +72,7 @@ namespace StockManagementSystemApplication
                 MessageBox.Show("Invalied Reorder lebel");
                 return;
             }
-            ItemsManager itemManager = new ItemsManager();
+            
 
             bool isAdded = itemManager.Add(item); 
                 if (isAdded)
@@ -82,10 +86,10 @@ namespace StockManagementSystemApplication
         }
         private void ItemSetup_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'stock_Management_System_currentDataSet1.Company' table. You can move, or remove it, as needed.
-            this.companyTableAdapter.Fill(this.stock_Management_System_currentDataSet1.Company);
-            // TODO: This line of code loads data into the 'stock_Management_System_currentDataSet.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.stock_Management_System_currentDataSet.Category);
+            companyComboBox.DataSource = itemManager.GetCompany(item);
+            companyComboBox.DataSource = itemManager.GetCatagory(item);
+
+
 
         }
     }

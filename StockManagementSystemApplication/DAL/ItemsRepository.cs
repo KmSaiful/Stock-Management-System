@@ -1,6 +1,7 @@
 ﻿using StockManagementSystemApplication.Modals;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,11 @@ namespace StockManagementSystemApplication.DAL
 {
     public class ItemsRepository
     {
+        SqlConnection con = new SqlConnection(@"server=TANVIR; database=Stock Management System current;integrated security=true");
+
         public bool Add(Items item)
         {
-            SqlConnection con = new SqlConnection(@"server=TANVIR; database=Stock Management System current;integrated security=true");
-
+            
             string query = @"INSERT INTO Item VALUES ('" + item.Name + "','" + item.CatagoryId + "','" + item.CompanyId + "','" + item.RecordLevel + "')";
             SqlCommand commend = new SqlCommand(query, con);
             con.Open();
@@ -22,6 +24,30 @@ namespace StockManagementSystemApplication.DAL
             return isAdded;
 
 
+
+        }
+        public DataTable GetCompany(Items item)
+        {
+
+            SqlCommand command = new SqlCommand(@"Select * FROM Company", con);
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(dt);
+            con.Close();
+            return dt;
+
+        }
+        public DataTable GetCatagory(Items item)
+        {
+
+            SqlCommand command = new SqlCommand(@"Select * FROM Category", con);
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(dt);
+            con.Close();
+            return dt;
 
         }
 

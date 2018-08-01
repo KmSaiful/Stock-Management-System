@@ -7,29 +7,31 @@ using StockManagementSystemApplication.Modals;
 namespace StockManagementSystemApplication.UIL
 {
     public partial class CatagorySetup : Form
-    { 
-        
+    {
+        Catagory catagory = new Catagory();
+        CatagoryManager catagoryManager = new CatagoryManager();
         public CatagorySetup()
         {
             InitializeComponent();
+            catagorydataGridView.DataSource = catagoryManager.GetCatagory(catagory);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            Catagory catagory = new Catagory();
-            catagory.Name = CatagoryNameTextBox.Text;
-            if (catagory.Name != null && catagory.Name.Length < 3)
+            
+            catagory.CategoryName = CatagoryNameTextBox.Text;
+            if (catagory.CategoryName != null && catagory.CategoryName.Length < 3)
             {
                 MessageBox.Show("Saved");
                 return;
             }
-            CatagoryManager catagoryManager = new CatagoryManager();
+            
 
             bool isAdded = catagoryManager.Add(catagory);
 
             if (isAdded)
             {
-                MessageBox.Show("Saved.");
+                catagorydataGridView.DataSource = catagoryManager.GetCatagory(catagory);
             }
             else
             {

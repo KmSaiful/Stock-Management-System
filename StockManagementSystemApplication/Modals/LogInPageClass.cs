@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystemApplication.Modals
 {
-    class LogInPageClass
+    public class LogInPageClass
     {
+        public int id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

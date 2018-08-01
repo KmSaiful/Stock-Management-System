@@ -91,7 +91,6 @@ C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManageme
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.pdb
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csprojResolveAssemblyReference.cache
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.UIL.CatagorySetup.resources
-C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Company_Setup.resources
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.HomePage.resources
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.ItemSetup.resources
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.LogInPage.resources
@@ -103,3 +102,4 @@ C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManageme
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csproj.GenerateResource.Cache
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.exe
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.pdb
+C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.CompanySetup.resources

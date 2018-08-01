@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystemApplication.UIL;
+using StockManagementSystemApplication.Modals;
 
 namespace StockManagementSystemApplication
 {
@@ -16,14 +17,15 @@ namespace StockManagementSystemApplication
         public HomePage()
         {
             InitializeComponent();
+           
+            
+            
         }
 
         private void companySetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Company_Setup company = new Company_Setup();
+            CompanySetup company = new CompanySetup();
             company.Show();
-            //HomePage home = new HomePage();
-            //home.Close();
         }
 
         private void categorySetupToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,7 +78,7 @@ namespace StockManagementSystemApplication
 
         private void setupCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Company_Setup company = new Company_Setup();
+            CompanySetup company = new CompanySetup();
             company.Show();
         }
 
@@ -103,6 +105,45 @@ namespace StockManagementSystemApplication
         {
             ItemsSummary summary = new ItemsSummary();
             summary.Show();
+        }
+
+        private void HomePage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("yes or no?",
+                           "Stock Management System",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information) == DialogResult.No)
+            {
+                Environment.Exit(1);
+            }
+            else 
+            { Environment.Exit(0); }
+
+        }
+
+        private void salesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SalesDates sales = new SalesDates();
+            sales.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("yes or no?",
+                          "Stock Management System",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Information) == DialogResult.No)
+            {
+                Environment.Exit(1);
+            }
+            else
+            { Environment.Exit(0); }
+        }
+
+        private void searchAndViewItemsSummaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemsSummary search = new ItemsSummary();
+            search.Show();
         }
     }
 }

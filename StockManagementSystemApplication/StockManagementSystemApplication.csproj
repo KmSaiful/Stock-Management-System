@@ -90,7 +90,6 @@
     <Compile Include="UIL\Company Setup.Designer.cs">
       <DependentUpon>Company Setup.cs</DependentUpon>
     </Compile>
-    <Compile Include="UIL\connection.cs" />
     <Compile Include="UIL\ItemSetup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +179,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StockManagementSystemApplication.Modals.Catagory.datasource" />
+    <None Include="StockManagementSystemApplication.Modals.Company.datasource" />
+    <None Include="StockManagementSystemApplication.Modals.Items.datasource" />
     <None Include="Stock_Management_System_currentDataSet.xsc">
       <DependentUpon>Stock_Management_System_currentDataSet.xsd</DependentUpon>
     </None>
@@ -206,6 +208,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
