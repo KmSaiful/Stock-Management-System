@@ -216,7 +216,7 @@
             // 
             this.stockInToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.stockInToolStripMenuItem1.Name = "stockInToolStripMenuItem1";
-            this.stockInToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.stockInToolStripMenuItem1.Size = new System.Drawing.Size(145, 24);
             this.stockInToolStripMenuItem1.Text = "Stock &In";
             this.stockInToolStripMenuItem1.Click += new System.EventHandler(this.stockInToolStripMenuItem1_Click);
             // 
@@ -224,7 +224,7 @@
             // 
             this.stockOutToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.stockOutToolStripMenuItem.Name = "stockOutToolStripMenuItem";
-            this.stockOutToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.stockOutToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
             this.stockOutToolStripMenuItem.Text = "Stock &Out";
             this.stockOutToolStripMenuItem.Click += new System.EventHandler(this.stockOutToolStripMenuItem_Click);
             // 
@@ -261,6 +261,7 @@
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(50, 23);
             this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // pictureBox1
             // 
@@ -295,7 +296,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HomePage";
             this.Text = "HomePage";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomePage_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -107,20 +107,6 @@ namespace StockManagementSystemApplication
             summary.Show();
         }
 
-        private void HomePage_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("yes or no?",
-                           "Stock Management System",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Information) == DialogResult.No)
-            {
-                Environment.Exit(1);
-            }
-            else 
-            { Environment.Exit(0); }
-
-        }
-
         private void salesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             SalesDates sales = new SalesDates();
@@ -132,18 +118,31 @@ namespace StockManagementSystemApplication
             if (MessageBox.Show("yes or no?",
                           "Stock Management System",
                            MessageBoxButtons.YesNo,
-                           MessageBoxIcon.Information) == DialogResult.No)
+                           MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                Environment.Exit(1);
+                Environment.Exit(0);
             }
             else
-            { Environment.Exit(0); }
+            { return; }
         }
 
         private void searchAndViewItemsSummaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ItemsSummary search = new ItemsSummary();
             search.Show();
+        }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("yes or no?",
+                          "Stock Management System",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            { return; }
         }
     }
 }
