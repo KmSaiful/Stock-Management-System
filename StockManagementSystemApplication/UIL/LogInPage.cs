@@ -39,7 +39,7 @@ namespace StockManagementSystemApplication
             bool isAdded = loginmanager.Check(login);
             if (isAdded)
             {
-                MessageBox.Show("Welcome: "+login.Username);
+                
                 HomePage homePage = new HomePage();
                 homePage.Show();
                 usernameTextBox.Clear();
