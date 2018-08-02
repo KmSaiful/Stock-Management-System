@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StockManagementSystemApplication.BLL
@@ -12,20 +13,21 @@ namespace StockManagementSystemApplication.BLL
     public class CompanyManager
     {
         CompanyRepository companyRepository = new CompanyRepository();
+        public static Regex regex = new Regex(@"[A-Za-z]");
         public bool Add(Company company)
         {
-            if(company == null && company.CompanyName.Length < 3)
+            bool isAdded = false;
+            if (regex.IsMatch(company.CompanyName))
             {
-                throw new Exception("Invalid Company Name");
+               
+                isAdded = companyRepository.Add(company);
             }
-
-            bool isValid = companyRepository.Add(company);
-            return isValid;
+            return isAdded;
         }
-        public DataTable GetCompany(Company company)
+
+        public DataTable Show()
         {
-            DataTable dt=new DataTable();
-            dt = companyRepository.GetCompany(company);
+            DataTable dt = companyRepository.Show();
             return dt;
         }
     }

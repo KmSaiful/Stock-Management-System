@@ -11,7 +11,7 @@ namespace StockManagementSystemApplication.DAL
 {
     public class ItemsRepository
     {
-        SqlConnection con = new SqlConnection(@"server=TANVIR; database=Stock Management System current;integrated security=true");
+        SqlConnection con = new SqlConnection(@"server=DESKTOP-ST75L53\SQLEXPRESS; database=Stock Management System;integrated security=true");
 
         public bool Add(Items item)
         {
@@ -50,7 +50,53 @@ namespace StockManagementSystemApplication.DAL
             return dt;
 
         }
+        public DataTable SetCategoryTable(string selectedCategoryName)
+        {
+            SqlCommand command = new SqlCommand(@"Select * From vm_StockIn WHERE CategoryName='" + selectedCategoryName + "'", con);
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public DataTable SetCompanyTable(string selectedCompanyName)
+        {
+            SqlCommand command = new SqlCommand(@"Select * From vm_StockIn WHERE CompanyName='" + selectedCompanyName + "'", con);
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public int GetCatagoryId(Items  item)
+        {
+            int itemId = 0;
+            SqlCommand command = new SqlCommand(@"Select * From Category WHERE CategoryName='" + item.CategoryName + "'", con);
+            con.Open();
+            SqlDataReader dr = command.ExecuteReader();
+            if (dr.Read())
+            {
 
-        
+                itemId = (int)dr["CategoryId"];
+            }
+            con.Close();
+            return itemId;
+        }
+        public int GetCompanyId(Items  item)
+        {
+            int itemId = 0;
+            SqlCommand command = new SqlCommand(@"Select * From Company WHERE CompanyName='" + item.CompanyName + "'", con);
+            con.Open();
+            SqlDataReader dr = command.ExecuteReader();
+            if (dr.Read())
+            {
+
+                itemId = (int)dr["CompanyId"];
+            }
+            con.Close();
+            return itemId;
+        }
     }
 }

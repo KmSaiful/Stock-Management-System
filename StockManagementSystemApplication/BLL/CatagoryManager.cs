@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using StockManagementSystemApplication.DAL;
 using StockManagementSystemApplication.Modals;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace StockManagementSystemApplication.BLL
 {
@@ -14,22 +15,21 @@ namespace StockManagementSystemApplication.BLL
   
     public  class CatagoryManager
     {
-        CatagoryRepository catagoryRepository = new CatagoryRepository();
-        public bool Add(Catagory catagory)
+        CatagoryRepository categorySetupRepository = new CatagoryRepository();
+        public static Regex regex = new Regex(@"[A-Za-z]");
+        public bool Add(Category category)
         {
-            if (catagory == null && catagory.CategoryName.Length < 3)
+            bool isAdded = false;
+            if (regex.IsMatch(category.CategoryName))
             {
-                throw new Exception("Invalid Name");
+                isAdded = categorySetupRepository.Add(category);
             }
-
-            bool isValid = catagoryRepository.Add(catagory);
-            return isValid;
-
+            return isAdded;
         }
-        public DataTable GetCatagory(Catagory catagory)
+
+        public DataTable Show()
         {
-            DataTable dt = new DataTable();
-            dt = catagoryRepository.GetCatagory(catagory);
+            DataTable dt = categorySetupRepository.Show();
             return dt;
         }
     }

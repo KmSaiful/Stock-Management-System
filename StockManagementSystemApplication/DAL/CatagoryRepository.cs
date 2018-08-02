@@ -12,29 +12,27 @@ namespace StockManagementSystemApplication.DAL
 {
     public class CatagoryRepository
     {
-        SqlConnection con = new SqlConnection(@"server=TANVIR; database=Stock Management System current;integrated security=true");
-
-        public bool Add(Catagory catagory)
+        SqlConnection connection = new SqlConnection(@"server=DESKTOP-ST75L53\SQLEXPRESS;database=Stock Management System;integrated security=true");
+        public bool Add(Category category)
         {
+         
+            SqlCommand command = new SqlCommand(@"INSERT INTO Category(CategoryName) values('" + category.CategoryName + "')", connection);
+            connection.Open();
+            bool isAdded = command.ExecuteNonQuery() > 0;
+            connection.Close();
+            return isAdded;
 
-
-
-            string query = @"INSERT INTO Category([Category Name]) VALUES ('" + catagory.CategoryName + "')";
-            SqlCommand commend = new SqlCommand(query, con);
-            con.Open();
-            bool isValid = commend.ExecuteNonQuery() > 0;
-            con.Close();
-            return isValid;
         }
-        public DataTable GetCatagory(Catagory catagory)
+        public DataTable Show()
         {
+           
+            SqlCommand command = new SqlCommand(@"SELECT * FROM Category", connection);
+            connection.Open();
 
-            SqlCommand command = new SqlCommand(@"Select * FROM Category", con);
-            con.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(command);
             da.Fill(dt);
-            con.Close();
+            connection.Close();
             return dt;
 
         }

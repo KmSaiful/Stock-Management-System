@@ -14,22 +14,22 @@ namespace StockManagementSystemApplication.BLL
         ItemsRepository itemsRepository = new ItemsRepository();
         public bool Add(Items item)
         {
-            if(item==null && item.Name.Length > 3 )
-            {
-                throw new Exception("Invalied Item name");
-            }
-            if(item.CatagoryId==null && item.CatagoryId<1)
-            {
-                 throw new Exception("Select a Catagory");
-            }
-            if(item.CompanyId==null && item.CompanyId<1)
-            {
-                 throw new Exception("Select a Company");
-            }
-            if (item.RecordLevel==null)
-            {
-                throw new Exception("Enter Reorder Lebel");
-            }
+            //if (item == null && item.Name.Length > 3)
+            //{
+            //    throw new Exception("Invalied Item name");
+            //}
+            //if (item.CatagoryId == null && item.CatagoryId < 1)
+            //{
+            //    throw new Exception("Select a Catagory");
+            //}
+            //if (item.CompanyId == null && item.CompanyId < 1)
+            //{
+            //    throw new Exception("Select a Company");
+            //}
+            //if (item.RecordLevel == null)
+            //{
+            //    throw new Exception("Enter Reorder Lebel");
+            //}
             bool isAdded = itemsRepository.Add(item);
             return isAdded;
 
@@ -46,8 +46,29 @@ namespace StockManagementSystemApplication.BLL
             dt = itemsRepository.GetCatagory(item);
             return dt;
         }
+        public DataTable SetCategoryTable(string selectedCategoryName)
+        {
+            DataTable dt = new DataTable();
+            dt = itemsRepository.SetCategoryTable(selectedCategoryName);
+            return dt;
+        }
+        public DataTable SetCompanyTable(string selectedCompanyName)
+        {
+            DataTable dt = new DataTable();
+            dt = itemsRepository.SetCompanyTable(selectedCompanyName);
 
-
+            return dt;
+        }
+        public int GetCatagoryId(Items  item)
+        {
+            int itemId = itemsRepository.GetCatagoryId(item);
+            return itemId;
+        }
+        public int GetCompanyId(Items  item)
+        {
+            int itemId = itemsRepository.GetCompanyId(item);
+            return itemId;
+        }
 
         
     }

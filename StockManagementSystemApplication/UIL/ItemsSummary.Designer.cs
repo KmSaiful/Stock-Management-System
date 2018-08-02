@@ -28,89 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.companyComboBox = new System.Windows.Forms.ComboBox();
+            this.itemsSummeryClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.itemsSummeryClassBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.itemSummaryDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsSummeryClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsSummeryClassBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemSummaryDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 46);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(189, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 19);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Company";
             // 
-            // comboBox1
+            // companyComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(223, 40);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(386, 27);
-            this.comboBox1.TabIndex = 1;
+            this.companyComboBox.DataSource = this.itemsSummeryClassBindingSource;
+            this.companyComboBox.DisplayMember = "CompanyName";
+            this.companyComboBox.FormattingEnabled = true;
+            this.companyComboBox.Location = new System.Drawing.Point(263, 43);
+            this.companyComboBox.Name = "companyComboBox";
+            this.companyComboBox.Size = new System.Drawing.Size(259, 21);
+            this.companyComboBox.TabIndex = 1;
+            this.companyComboBox.ValueMember = "CompanyId";
+            this.companyComboBox.SelectedIndexChanged += new System.EventHandler(this.companyComboBox_SelectedIndexChanged);
+            // 
+            // itemsSummeryClassBindingSource
+            // 
+            this.itemsSummeryClassBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.ItemsSummeryClass);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 85);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(189, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 19);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Category";
             // 
-            // comboBox2
+            // categoryComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(223, 79);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(386, 27);
-            this.comboBox2.TabIndex = 1;
+            this.categoryComboBox.DataSource = this.itemsSummeryClassBindingSource1;
+            this.categoryComboBox.DisplayMember = "CategoryName";
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(263, 70);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(259, 21);
+            this.categoryComboBox.TabIndex = 1;
+            this.categoryComboBox.ValueMember = "CaegoryId";
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
-            // button1
+            // itemsSummeryClassBindingSource1
             // 
-            this.button1.Location = new System.Drawing.Point(491, 141);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 34);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.itemsSummeryClassBindingSource1.DataSource = typeof(StockManagementSystemApplication.Modals.ItemsSummeryClass);
             // 
-            // dataGridView1
+            // SearchButton
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 201);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(668, 251);
-            this.dataGridView1.TabIndex = 3;
+            this.SearchButton.Location = new System.Drawing.Point(441, 112);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchButton.TabIndex = 2;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // itemSummaryDataGridView
+            // 
+            this.itemSummaryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.itemSummaryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemSummaryDataGridView.Location = new System.Drawing.Point(12, 159);
+            this.itemSummaryDataGridView.Name = "itemSummaryDataGridView";
+            this.itemSummaryDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.itemSummaryDataGridView.RowHeadersVisible = false;
+            this.itemSummaryDataGridView.ShowRowErrors = false;
+            this.itemSummaryDataGridView.Size = new System.Drawing.Size(744, 311);
+            this.itemSummaryDataGridView.TabIndex = 3;
             // 
             // ItemsSummary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(741, 465);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(770, 482);
+            this.Controls.Add(this.itemSummaryDataGridView);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.companyComboBox);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ItemsSummary";
             this.Text = "Scarch & View Item\'s Summary";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsSummeryClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsSummeryClassBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemSummaryDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,10 +139,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox companyComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox categoryComboBox;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.DataGridView itemSummaryDataGridView;
+        private System.Windows.Forms.BindingSource itemsSummeryClassBindingSource;
+        private System.Windows.Forms.BindingSource itemsSummeryClassBindingSource1;
     }
 }

@@ -7,31 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace StockManagementSystemApplication.DAL
 {
     public class CompanyRepository
     {
-        SqlConnection con = new SqlConnection(@"server=TANVIR; database=Stock Management System current;integrated security=true");
+        SqlConnection connection = new SqlConnection(@"server=DESKTOP-ST75L53\SQLEXPRESS;database=Stock Management System;integrated security=true");
         public bool Add(Company company)
         {
-
-            string query = @"INSERT INTO Company(CompanyName) VALUES ('" + company.CompanyName + "')";
-            SqlCommand commend = new SqlCommand(query, con);
-            con.Open();
-            bool isValid = commend.ExecuteNonQuery() > 0;
-            con.Close();
-            return isValid;
+           
+            SqlCommand command = new SqlCommand(@"INSERT INTO Company(CompanyName) values('" + company.CompanyName + "')", connection);
+            connection.Open();
+            bool isAdded = command.ExecuteNonQuery() > 0;
+            connection.Close();
+            return isAdded;
 
         }
-        public DataTable GetCompany(Company company)
+        public DataTable Show()
         {
-            
-            SqlCommand command = new SqlCommand(@"Select * FROM Company", con);
-            con.Open();
+           
+            SqlCommand command = new SqlCommand(@"SELECT * FROM Company", connection);
+            connection.Open();
+
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(command);
             da.Fill(dt);
-            con.Close();
+            connection.Close();
             return dt;
 
         }

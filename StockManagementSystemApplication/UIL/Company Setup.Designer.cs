@@ -33,7 +33,6 @@
             this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CompanyDataGridView = new System.Windows.Forms.DataGridView();
-            this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CompanyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
@@ -69,22 +68,13 @@
             // 
             // CompanyDataGridView
             // 
-            this.CompanyDataGridView.AutoGenerateColumns = false;
+            this.CompanyDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CompanyDataGridView.ColumnHeadersHeight = 21;
-            this.CompanyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.companyNameDataGridViewTextBoxColumn});
-            this.CompanyDataGridView.DataSource = this.companyBindingSource;
             this.CompanyDataGridView.Location = new System.Drawing.Point(38, 114);
             this.CompanyDataGridView.Name = "CompanyDataGridView";
+            this.CompanyDataGridView.RowHeadersVisible = false;
             this.CompanyDataGridView.Size = new System.Drawing.Size(259, 273);
             this.CompanyDataGridView.TabIndex = 3;
-            // 
-            // companyNameDataGridViewTextBoxColumn
-            // 
-            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
-            this.companyNameDataGridViewTextBoxColumn.Width = 200;
             // 
             // companyBindingSource
             // 
@@ -116,6 +106,5 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.DataGridView CompanyDataGridView;
         private System.Windows.Forms.BindingSource companyBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn;
     }
 }

@@ -15,82 +15,77 @@ namespace StockManagementSystemApplication
 {
     public partial class ItemSetup : Form
     {
+        ItemsManager itemManager = new ItemsManager();
+        Items item = new Items();
         public ItemSetup()
         {
             InitializeComponent();
+            companyComboBox.DataSource = itemManager.GetCompany(item);
+            catagoryComboBox.DataSource = itemManager.GetCatagory(item);
 
 
         }
-        ItemsManager itemManager = new ItemsManager();
-        Items item = new Items();
+        
         
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            if (ItemNameTextBox.Text != null && ItemNameTextBox.Text.Length > 3)
-            {
-                
-                item.Name = ItemNameTextBox.Text;
-                
-                
-            }
-            else
-            {
-                MessageBox.Show("Invalied Name");
-                return;
-            }
-            if (Convert.ToInt32(catagoryComboBox.SelectedValue) != null && Convert.ToInt32(catagoryComboBox.SelectedValue) > 0)
-            {
-                item.CatagoryId = Convert.ToInt32(catagoryComboBox.SelectedValue);
-                
-            }
-            else
-            {
-                MessageBox.Show("Select A catagory");
-                return;
-            }
-            if (Convert.ToInt32(companyComboBox.SelectedValue) != null && Convert.ToInt32(companyComboBox.SelectedValue) > 0)
-            {
-                item.CompanyId = Convert.ToInt32(companyComboBox.SelectedValue);
-                
-            }
-            else
-            {
-                MessageBox.Show("Select A Company");
-                return;
-            }
-            if (Convert.ToInt32(ReordertextBox.Text) != null)
-            {
-                item.RecordLevel = Convert.ToInt32(ReordertextBox.Text);
-                
-            }
-            else
-            {
-                MessageBox.Show("Invalied Reorder lebel");
-                return;
-            }
-            
+           
+            item.Name = ItemNameTextBox.Text;
+            item.CategoryName = catagoryComboBox.Text;
+            item.CompanyName = companyComboBox.Text;
+            item.RecordLevel = Convert.ToInt32(ReordertextBox.Text);
+            item.CatagoryId = itemManager.GetCatagoryId(item);
+            item.CompanyId = itemManager.GetCompanyId(item);
 
-            bool isAdded = itemManager.Add(item); 
-                if (isAdded)
+            bool isAdded = itemManager.Add(item);
+            if (isAdded)
             {
-                MessageBox.Show("Item Added .");
+                MessageBox.Show("Item Added Successfully!");
             }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+
+
         }
-        private void ItemSetup_Load(object sender, EventArgs e)
+
+        private void catagoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            companyComboBox.DataSource = itemManager.GetCompany(item);
-            companyComboBox.DataSource = itemManager.GetCatagory(item);
+            string selectedCategoryName = catagoryComboBox.Text;
+            DataTable dt = new DataTable();
+            dt = itemManager.SetCategoryTable(selectedCategoryName);
 
 
 
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No Item Found!");
+            }
+            else
+            {
+
+                companyComboBox.DataSource = dt;
+                
+            }
         }
+
+        private void companyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCompanyName = companyComboBox.Text;
+            DataTable dt = new DataTable();
+            dt = itemManager.SetCompanyTable(selectedCompanyName);
+
+            if (dt.Rows.Count == 0)
+            {
+
+                MessageBox.Show("No Item Found!");
+            }
+            else
+            {
+
+                companyComboBox.DataSource = dt;
+               
+            }
+        }
+       
     }
 }

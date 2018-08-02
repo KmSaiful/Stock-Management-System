@@ -28,196 +28,260 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ReordertextBox = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
             this.label5 = new System.Windows.Forms.Label();
-            this.AvailabletextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.InqualtitytextBox = new System.Windows.Forms.TextBox();
+            this.stockOutQuantityTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.CompanycomboBox = new System.Windows.Forms.ComboBox();
+            this.companyComboBox = new System.Windows.Forms.ComboBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.ItemcomboBox = new System.Windows.Forms.ComboBox();
+            this.itemComboBox = new System.Windows.Forms.ComboBox();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.Addbutton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.stockOutDataGridView = new System.Windows.Forms.DataGridView();
+            this.stockOutClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SellButton = new System.Windows.Forms.Button();
+            this.DamageButton = new System.Windows.Forms.Button();
+            this.LostButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.catagorycomboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reorderLabel = new System.Windows.Forms.Label();
+            this.quantityLabel = new System.Windows.Forms.Label();
+            this.reorderMessageLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockOutDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockOutClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ReordertextBox
-            // 
-            this.ReordertextBox.Location = new System.Drawing.Point(306, 127);
-            this.ReordertextBox.Name = "ReordertextBox";
-            this.ReordertextBox.Size = new System.Drawing.Size(245, 22);
-            this.ReordertextBox.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(159, 185);
+            this.label5.Location = new System.Drawing.Point(87, 170);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 15);
+            this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Stock In Quantity";
-            // 
-            // AvailabletextBox
-            // 
-            this.AvailabletextBox.Location = new System.Drawing.Point(306, 157);
-            this.AvailabletextBox.Name = "AvailabletextBox";
-            this.AvailabletextBox.Size = new System.Drawing.Size(245, 22);
-            this.AvailabletextBox.TabIndex = 12;
+            this.label5.Text = "Stock Out Quantity";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(156, 155);
+            this.label4.Location = new System.Drawing.Point(84, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 15);
+            this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Available Quantity";
             // 
-            // InqualtitytextBox
+            // stockOutQuantityTextBox
             // 
-            this.InqualtitytextBox.Location = new System.Drawing.Point(306, 187);
-            this.InqualtitytextBox.Name = "InqualtitytextBox";
-            this.InqualtitytextBox.Size = new System.Drawing.Size(245, 22);
-            this.InqualtitytextBox.TabIndex = 13;
+            this.stockOutQuantityTextBox.Location = new System.Drawing.Point(205, 163);
+            this.stockOutQuantityTextBox.Name = "stockOutQuantityTextBox";
+            this.stockOutQuantityTextBox.Size = new System.Drawing.Size(211, 20);
+            this.stockOutQuantityTextBox.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(159, 125);
+            this.label3.Location = new System.Drawing.Point(102, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 15);
+            this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "Reorder Level";
             // 
-            // CompanycomboBox
+            // companyComboBox
             // 
-            this.CompanycomboBox.FormattingEnabled = true;
-            this.CompanycomboBox.Location = new System.Drawing.Point(306, 65);
-            this.CompanycomboBox.Name = "CompanycomboBox";
-            this.CompanycomboBox.Size = new System.Drawing.Size(245, 23);
-            this.CompanycomboBox.TabIndex = 6;
+            this.companyComboBox.DataSource = this.companyBindingSource;
+            this.companyComboBox.DisplayMember = "CompanyName";
+            this.companyComboBox.FormattingEnabled = true;
+            this.companyComboBox.Location = new System.Drawing.Point(205, 36);
+            this.companyComboBox.Name = "companyComboBox";
+            this.companyComboBox.Size = new System.Drawing.Size(211, 21);
+            this.companyComboBox.TabIndex = 6;
+            this.companyComboBox.ValueMember = "CompanyId";
+            this.companyComboBox.SelectedIndexChanged += new System.EventHandler(this.companyComboBox_SelectedIndexChanged);
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Company);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 96);
+            this.label2.Location = new System.Drawing.Point(149, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 15);
+            this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Item";
             // 
-            // ItemcomboBox
+            // itemComboBox
             // 
-            this.ItemcomboBox.FormattingEnabled = true;
-            this.ItemcomboBox.Location = new System.Drawing.Point(306, 96);
-            this.ItemcomboBox.Name = "ItemcomboBox";
-            this.ItemcomboBox.Size = new System.Drawing.Size(245, 23);
-            this.ItemcomboBox.TabIndex = 7;
+            this.itemComboBox.DataSource = this.itemBindingSource;
+            this.itemComboBox.DisplayMember = "ItemName";
+            this.itemComboBox.FormattingEnabled = true;
+            this.itemComboBox.Location = new System.Drawing.Point(205, 73);
+            this.itemComboBox.Name = "itemComboBox";
+            this.itemComboBox.Size = new System.Drawing.Size(211, 21);
+            this.itemComboBox.TabIndex = 7;
+            this.itemComboBox.ValueMember = "ItemId";
+            this.itemComboBox.SelectedIndexChanged += new System.EventHandler(this.itemComboBox_SelectedIndexChanged);
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Items);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(159, 65);
+            this.label1.Location = new System.Drawing.Point(125, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Company";
             // 
-            // Addbutton
+            // AddButton
             // 
-            this.Addbutton.Location = new System.Drawing.Point(440, 234);
-            this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(87, 37);
-            this.Addbutton.TabIndex = 14;
-            this.Addbutton.Text = "Add";
-            this.Addbutton.UseVisualStyleBackColor = true;
+            this.AddButton.Location = new System.Drawing.Point(341, 205);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(75, 32);
+            this.AddButton.TabIndex = 14;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // dataGridView1
+            // stockOutDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 278);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(719, 330);
-            this.dataGridView1.TabIndex = 15;
+            this.stockOutDataGridView.AllowUserToAddRows = false;
+            this.stockOutDataGridView.AllowUserToDeleteRows = false;
+            this.stockOutDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.stockOutDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.stockOutDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stockOutDataGridView.Location = new System.Drawing.Point(22, 253);
+            this.stockOutDataGridView.Name = "stockOutDataGridView";
+            this.stockOutDataGridView.ReadOnly = true;
+            this.stockOutDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.stockOutDataGridView.RowHeadersVisible = false;
+            this.stockOutDataGridView.Size = new System.Drawing.Size(394, 236);
+            this.stockOutDataGridView.TabIndex = 15;
             // 
-            // button2
+            // stockOutClassBindingSource
             // 
-            this.button2.Location = new System.Drawing.Point(759, 305);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 39);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Sell";
-            this.button2.UseVisualStyleBackColor = true;
+            this.stockOutClassBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.StockOutClass);
             // 
-            // button3
+            // SellButton
             // 
-            this.button3.Location = new System.Drawing.Point(759, 391);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 39);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Damage";
-            this.button3.UseVisualStyleBackColor = true;
+            this.SellButton.Location = new System.Drawing.Point(139, 514);
+            this.SellButton.Name = "SellButton";
+            this.SellButton.Size = new System.Drawing.Size(75, 34);
+            this.SellButton.TabIndex = 16;
+            this.SellButton.Text = "Sell";
+            this.SellButton.UseVisualStyleBackColor = true;
+            this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
-            // button4
+            // DamageButton
             // 
-            this.button4.Location = new System.Drawing.Point(766, 459);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 39);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Lost";
-            this.button4.UseVisualStyleBackColor = true;
+            this.DamageButton.Location = new System.Drawing.Point(243, 514);
+            this.DamageButton.Name = "DamageButton";
+            this.DamageButton.Size = new System.Drawing.Size(80, 34);
+            this.DamageButton.TabIndex = 17;
+            this.DamageButton.Text = "Damage";
+            this.DamageButton.UseVisualStyleBackColor = true;
+            this.DamageButton.Click += new System.EventHandler(this.DamageButton_Click);
+            // 
+            // LostButton
+            // 
+            this.LostButton.Location = new System.Drawing.Point(341, 514);
+            this.LostButton.Name = "LostButton";
+            this.LostButton.Size = new System.Drawing.Size(75, 34);
+            this.LostButton.TabIndex = 18;
+            this.LostButton.Text = "Lost";
+            this.LostButton.UseVisualStyleBackColor = true;
+            this.LostButton.Click += new System.EventHandler(this.LostButton_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(159, 35);
+            this.label6.Location = new System.Drawing.Point(125, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 15);
+            this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 19;
             this.label6.Text = "Catagory";
             // 
-            // catagorycomboBox
+            // categoryComboBox
             // 
-            this.catagorycomboBox.FormattingEnabled = true;
-            this.catagorycomboBox.Location = new System.Drawing.Point(306, 33);
-            this.catagorycomboBox.Name = "catagorycomboBox";
-            this.catagorycomboBox.Size = new System.Drawing.Size(244, 23);
-            this.catagorycomboBox.TabIndex = 20;
+            this.categoryComboBox.DataSource = this.categoryBindingSource;
+            this.categoryComboBox.DisplayMember = "CategoryName";
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(205, 9);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(210, 21);
+            this.categoryComboBox.TabIndex = 20;
+            this.categoryComboBox.ValueMember = "CategoryId";
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Category);
+            // 
+            // reorderLabel
+            // 
+            this.reorderLabel.AutoSize = true;
+            this.reorderLabel.Location = new System.Drawing.Point(202, 114);
+            this.reorderLabel.Name = "reorderLabel";
+            this.reorderLabel.Size = new System.Drawing.Size(0, 13);
+            this.reorderLabel.TabIndex = 23;
+            // 
+            // quantityLabel
+            // 
+            this.quantityLabel.AutoSize = true;
+            this.quantityLabel.Location = new System.Drawing.Point(202, 140);
+            this.quantityLabel.Name = "quantityLabel";
+            this.quantityLabel.Size = new System.Drawing.Size(0, 13);
+            this.quantityLabel.TabIndex = 24;
+            // 
+            // reorderMessageLabel
+            // 
+            this.reorderMessageLabel.AutoSize = true;
+            this.reorderMessageLabel.Location = new System.Drawing.Point(258, 114);
+            this.reorderMessageLabel.Name = "reorderMessageLabel";
+            this.reorderMessageLabel.Size = new System.Drawing.Size(0, 13);
+            this.reorderMessageLabel.TabIndex = 23;
             // 
             // Stock_Out
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(926, 632);
-            this.Controls.Add(this.catagorycomboBox);
+            this.ClientSize = new System.Drawing.Size(450, 576);
+            this.Controls.Add(this.reorderMessageLabel);
+            this.Controls.Add(this.reorderLabel);
+            this.Controls.Add(this.quantityLabel);
+            this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Addbutton);
-            this.Controls.Add(this.ReordertextBox);
+            this.Controls.Add(this.LostButton);
+            this.Controls.Add(this.DamageButton);
+            this.Controls.Add(this.SellButton);
+            this.Controls.Add(this.stockOutDataGridView);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.AvailabletextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.InqualtitytextBox);
+            this.Controls.Add(this.stockOutQuantityTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.CompanycomboBox);
+            this.Controls.Add(this.companyComboBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ItemcomboBox);
+            this.Controls.Add(this.itemComboBox);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Stock_Out";
             this.Text = "Stock_Out";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockOutDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockOutClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,22 +289,27 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox ReordertextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox AvailabletextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox InqualtitytextBox;
+        private System.Windows.Forms.TextBox stockOutQuantityTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CompanycomboBox;
+        private System.Windows.Forms.ComboBox companyComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox ItemcomboBox;
+        private System.Windows.Forms.ComboBox itemComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Addbutton;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.DataGridView stockOutDataGridView;
+        private System.Windows.Forms.Button SellButton;
+        private System.Windows.Forms.Button DamageButton;
+        private System.Windows.Forms.Button LostButton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox catagorycomboBox;
+        private System.Windows.Forms.ComboBox categoryComboBox;
+        private System.Windows.Forms.Label reorderLabel;
+        private System.Windows.Forms.Label quantityLabel;
+        private System.Windows.Forms.BindingSource companyBindingSource;
+        private System.Windows.Forms.BindingSource itemBindingSource;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
+        private System.Windows.Forms.BindingSource stockOutClassBindingSource;
+        private System.Windows.Forms.Label reorderMessageLabel;
     }
 }

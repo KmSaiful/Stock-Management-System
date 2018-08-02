@@ -103,3 +103,20 @@ C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManageme
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.exe
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.pdb
 C:\Users\Tanvir Hridoy\Desktop\SMK project\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.CompanySetup.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.exe.config
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.exe
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.pdb
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.exe
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.pdb
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csprojResolveAssemblyReference.cache
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.UIL.CatagorySetup.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.CompanySetup.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.HomePage.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.ItemSetup.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.LogInPage.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Properties.Resources.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.ItemsSummary.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.SalesDates.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_In.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_Out.resources
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csproj.GenerateResource.Cache

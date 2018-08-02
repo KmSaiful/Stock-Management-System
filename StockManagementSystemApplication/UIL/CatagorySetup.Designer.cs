@@ -33,8 +33,6 @@
             this.CatagoryNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.catagorydataGridView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catagoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.catagoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.catagoryRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -75,36 +73,21 @@
             // catagorydataGridView
             // 
             this.catagorydataGridView.AllowUserToAddRows = false;
-            this.catagorydataGridView.AutoGenerateColumns = false;
+            this.catagorydataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.catagorydataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.catagorydataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.categoryNameDataGridViewTextBoxColumn});
-            this.catagorydataGridView.DataSource = this.catagoryBindingSource1;
             this.catagorydataGridView.Location = new System.Drawing.Point(56, 107);
             this.catagorydataGridView.Name = "catagorydataGridView";
+            this.catagorydataGridView.RowHeadersVisible = false;
             this.catagorydataGridView.Size = new System.Drawing.Size(245, 278);
             this.catagorydataGridView.TabIndex = 2;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // categoryNameDataGridViewTextBoxColumn
-            // 
-            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
-            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CategoryName";
-            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
-            // 
             // catagoryBindingSource1
             // 
-            this.catagoryBindingSource1.DataSource = typeof(StockManagementSystemApplication.Modals.Catagory);
+            this.catagoryBindingSource1.DataSource = typeof(StockManagementSystemApplication.Modals.Category);
             // 
             // catagoryBindingSource
             // 
-            this.catagoryBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Catagory);
+            this.catagoryBindingSource.DataSource = typeof(StockManagementSystemApplication.Modals.Category);
             // 
             // catagoryRepositoryBindingSource
             // 
@@ -141,7 +124,6 @@
         private System.Windows.Forms.BindingSource catagoryBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource catagoryBindingSource1;
     }
 }

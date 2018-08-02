@@ -19,30 +19,27 @@ namespace StockManagementSystemApplication
         public CompanySetup()
         {
             InitializeComponent();
-            CompanyDataGridView.DataSource = companyManager.GetCompany(company);
+        //    CompanyDataGridView.DataSource = companyManager.GetCompany(company);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
+            Company company = new Company();
+            company.CompanyName =CompanyNameTextBox.Text;
            
-            company.CompanyName = CompanyNameTextBox.Text;
-            if(company.CompanyName != null && company.CompanyName.Length < 3)
-            {
-                MessageBox.Show("Seved");
-                return;
-            }
-            
 
             bool isAdded = companyManager.Add(company);
 
             if (isAdded)
             {
-                CompanyDataGridView.DataSource = companyManager.GetCompany(company);
+                DataTable dt = companyManager.Show();
+               CompanyDataGridView.DataSource = dt;
+                // categorySetupDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                return;
             }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            MessageBox.Show("Failed!");
+
         }
     }
 }
