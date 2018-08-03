@@ -35,7 +35,7 @@ namespace StockManagementSystemApplication.DAL
             return dt;
         }
 
-        public DataTable GetItemTable(Items item)
+        public DataTable GetItemTable(Item item)
         {
             SqlCommand command = new SqlCommand(@"Select * From Item", connection);
             connection.Open();
@@ -78,7 +78,7 @@ namespace StockManagementSystemApplication.DAL
 
         public bool AddStockOut(List<string> gridViewData)
         {
-            SqlCommand command = new SqlCommand(@"INSERT INTO [Stock Out](ItemId,StockOutQuantity,StockOutType,Date) values('" + Convert.ToInt32(gridViewData[4]) + "','" + gridViewData[3] + "','"+gridViewData[5]+"',GETDATE())", connection);
+            SqlCommand command = new SqlCommand(@"INSERT INTO [Stock Out](ItemId,StockOutQuantity,StockOutType,Date) values('" + Convert.ToInt32(gridViewData[4]) + "','" + gridViewData[3] + "','" + gridViewData[5] + "',GETDATE())", connection);
             connection.Open();
             bool isAdded = command.ExecuteNonQuery() > 0;
             connection.Close();
@@ -99,22 +99,12 @@ namespace StockManagementSystemApplication.DAL
 
 
 
-
-
-
-
-
-
-
-
-
-
-//        public bool Update(StockInClass stockIn)
+//        public bool  AddStockOut(List<string> gridViewData)
 //        {
 //            bool isUpdated;
-//            SqlCommand command = new SqlCommand(@"SELECT * FROM Transanction
-//INNER JOIN Item On Item.ItemId=Transanction.ItemId
-// WHERE Item.ItemName='" + stockIn.ItemName + "'", connection);
+//            SqlCommand command = new SqlCommand(@"SELECT * FROM [Stock Out]
+//        
+//         WHERE ItemId='" + Convert.ToInt32(gridViewData[4]) + "'", connection);
 //            connection.Open();
 //            //  SqlDataAdapter da = new SqlDataAdapter(command);
 //            SqlDataReader dr = command.ExecuteReader();
@@ -123,14 +113,14 @@ namespace StockManagementSystemApplication.DAL
 //            {
 //                connection.Close();
 //                connection.Open();
-//                SqlCommand command2 = new SqlCommand(@"Update Transanction Set AvailableQuantity='" + stockIn.AvailableQuantity + "'", connection);
+//                SqlCommand command2 = new SqlCommand(@"Update [Stock Out] Set StockOutQuantity+='" + Convert.ToInt64(gridViewData[3]) + "' WHERE ItemId='" + Convert.ToInt32(gridViewData[4]) + "'", connection);
 //                isUpdated = command2.ExecuteNonQuery() > 0;
 //            }
 //            else
 //            {
 //                connection.Close();
 //                connection.Open();
-//                SqlCommand command2 = new SqlCommand(@"INSERT INTO Transanction(ItemId,AvailableQuantity) values('" + stockIn.ItemId + "','" + stockIn.AvailableQuantity + "')", connection);
+//                SqlCommand command2 = new SqlCommand(@"INSERT INTO [Stock Out](ItemId,StockOutQuantity,StockOutType,Date) values('" + Convert.ToInt32(gridViewData[4]) + "','" + gridViewData[3] + "','" + gridViewData[5] + "',GETDATE())", connection);
 //                isUpdated = command2.ExecuteNonQuery() > 0;
 //            }
 //            connection.Close();

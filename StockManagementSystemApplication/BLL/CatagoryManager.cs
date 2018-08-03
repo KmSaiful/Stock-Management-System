@@ -22,10 +22,18 @@ namespace StockManagementSystemApplication.BLL
             bool isAdded = false;
             if (regex.IsMatch(category.CategoryName))
             {
-                isAdded = categorySetupRepository.Add(category);
+                if (category.CategoryId == 0)
+                {
+                    isAdded = categorySetupRepository.Add(category);
+                }
+                else
+                {
+                    isAdded = categorySetupRepository.Update(category);
+                }
             }
             return isAdded;
         }
+       
 
         public DataTable Show()
         {

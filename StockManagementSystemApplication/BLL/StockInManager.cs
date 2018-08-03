@@ -24,7 +24,7 @@ namespace StockManagementSystemApplication.BLL
             DataTable dt = stockInRepository.GetCompanyTable(company);
             return dt;
         }
-        public DataTable GetItemTable(Items item)
+        public DataTable GetItemTable(Item item)
         {
             DataTable dt = stockInRepository.GetItemTable(item);
             return dt;

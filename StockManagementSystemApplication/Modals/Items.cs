@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystemApplication.Modals
 {
-    public class Items
+    public class Item
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int CatagoryId { get; set; }
+        public int CaegoryId { get; set; }
         public int CompanyId { get; set; }
-        public int RecordLevel { get; set; }
+        public int ItemId { get; set; }
         public string CategoryName { get; set; }
-        public string CompanyName{get;set;}
-
+        public string CompanyName { get; set; }
+        public string ItemName { get; set; }
+        public long ReorderLevel { get; set; }
     }
 }

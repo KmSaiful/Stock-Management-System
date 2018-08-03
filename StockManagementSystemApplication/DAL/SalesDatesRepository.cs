@@ -15,9 +15,10 @@ namespace StockManagementSystemApplication.DAL
         SqlConnection connection = new SqlConnection(@"server=DESKTOP-ST75L53\SQLEXPRESS;database=Stock Management System;integrated security=true");
         public DataTable GetSalesReport(SalesDatesClass salesDatesClass)
         {
-            SqlCommand command = new SqlCommand(@"Select i.ItemName,s.StockOutQuantity From [Stock Out] s
+            SqlCommand command = new SqlCommand(@"Select i.ItemName AS Item,Sum(s.StockOutQuantity) AS Quantity From [Stock Out] s
 Inner Join Item i On i.ItemId=s.ItemId
-WHERE Date Between '"+salesDatesClass.FromDateTime+"' AND '"+salesDatesClass.ToDateTime+"' AND StockOutType='Sell'", connection);
+WHERE Date Between '" + salesDatesClass.FromDateTime + "' AND '" + salesDatesClass.ToDateTime + "' AND StockOutType='Sell' Group By i.ItemName ORDER BY Item DESC", connection);
+           
             connection.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(command);

@@ -40,8 +40,10 @@ namespace StockManagementSystemApplication
             if (isAdded)
             {
                 
+                this.Hide();
                 HomePage homePage = new HomePage();
                 homePage.Show();
+                
                 usernameTextBox.Clear();
                 passwordTextBox.Clear();
                 

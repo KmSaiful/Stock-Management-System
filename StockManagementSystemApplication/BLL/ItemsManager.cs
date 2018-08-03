@@ -12,7 +12,7 @@ namespace StockManagementSystemApplication.BLL
     public class ItemsManager
     {
         ItemsRepository itemsRepository = new ItemsRepository();
-        public bool Add(Items item)
+        public bool Add(Item item)
         {
             //if (item == null && item.Name.Length > 3)
             //{
@@ -34,13 +34,13 @@ namespace StockManagementSystemApplication.BLL
             return isAdded;
 
         }
-        public DataTable GetCompany(Items item)
+        public DataTable GetCompany(Item item)
         {
             DataTable dt = new DataTable();
             dt = itemsRepository.GetCompany(item);
             return dt;
         }
-        public DataTable GetCatagory(Items item)
+        public DataTable GetCatagory(Item item)
         {
             DataTable dt = new DataTable();
             dt = itemsRepository.GetCatagory(item);
@@ -59,12 +59,12 @@ namespace StockManagementSystemApplication.BLL
 
             return dt;
         }
-        public int GetCatagoryId(Items  item)
+        public int GetCatagoryId(Item  item)
         {
             int itemId = itemsRepository.GetCatagoryId(item);
             return itemId;
         }
-        public int GetCompanyId(Items  item)
+        public int GetCompanyId(Item  item)
         {
             int itemId = itemsRepository.GetCompanyId(item);
             return itemId;

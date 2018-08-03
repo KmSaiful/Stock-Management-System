@@ -35,7 +35,7 @@ namespace StockManagementSystemApplication.DAL
             return dt;
         }
 
-        public DataTable GetItemTable(Items item)
+        public DataTable GetItemTable(Item item)
         {
             SqlCommand command = new SqlCommand(@"Select * From Item", connection);
             connection.Open();

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystemApplication.BLL;
 using StockManagementSystemApplication.Modals;
+using StockManagementSystemApplication.UIL;
 
 namespace StockManagementSystemApplication
 {
@@ -18,7 +19,7 @@ namespace StockManagementSystemApplication
         private int count = 1;
         Category category=new Category();
         Company company=new Company();
-        Items item=new Items();
+        Item item=new Item();
         StockOutClass stockOut = new StockOutClass();
         StockOutManager stockOutManager = new StockOutManager();
         public Stock_Out()
@@ -32,38 +33,150 @@ namespace StockManagementSystemApplication
 
         }
 
-        //private void Save_Click(object sender, EventArgs e)
-        //{
-        //    StockOutClass stockOut=new StockOutClass();
-        //   stockOut.ItemName = itemComboBox.Text;
 
-        //    stockIn.ItemId = stockOutManager.GetItemId(stockIn);
-         
-           
-        //    stockIn.AvailableQuantity = Convert.ToInt32(quantityLabel.Text);
-        //    bool isTrue=stockOutManager.Validation(stockOutQuantityTextBox.Text);
-        //    if (!isTrue)
-        //    {
-        //        MessageBox.Show("Please Enter a Valid Number!");
-        //        return;
-        //    }
-        //    stockIn.StockInQuantity = Convert.ToInt32(stockOutQuantityTextBox.Text);
-        //    stockIn.AvailableQuantity += stockIn.StockInQuantity;
-        //    bool isAdded = stockOutManager.Update(stockIn);
-        //    if (isAdded)
-        //    {
-        //        MessageBox.Show("Stock In Succesful!");
-        //        stockOutQuantityTextBox.Text = String.Empty;
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Stock In Failed!");
-        //        return;
-        //    }
+        //*****************************************************************//
+        private void companySetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            CompanySetup company = new CompanySetup();
+            company.Show();
+        }
 
-        // }
-        
+        private void categorySetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            CatagorySetup catagory = new CatagorySetup();
+            catagory.Show();
+        }
+
+        private void itemSetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ItemSetup items = new ItemSetup();
+            items.Show();
+        }
+
+        private void stokInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Stock_In stockin = new Stock_In();
+            stockin.Show();
+        }
+
+        private void stockOutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Stock_Out stockout = new Stock_Out();
+            stockout.Show();
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SalesDates sales = new SalesDates();
+            sales.Show();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ItemsSummary search = new ItemsSummary();
+            this.Close();
+            search.Show();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LogInPage logout = new LogInPage();
+            logout.Show();
+        }
+
+        private void setupCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            CatagorySetup catagory = new CatagorySetup();
+            catagory.Show();
+        }
+
+        private void setupCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            CompanySetup company = new CompanySetup();
+            company.Show();
+        }
+
+        private void setupItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ItemSetup items = new ItemSetup();
+            items.Show();
+        }
+
+        private void stockInToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Stock_In stockin = new Stock_In();
+            stockin.Show();
+
+        }
+
+        private void stockOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Stock_Out stockout = new Stock_Out();
+            stockout.Show();
+        }
+
+        private void searchAndViewItemsSummaryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ItemsSummary summary = new ItemsSummary();
+            summary.Show();
+        }
+
+        private void salesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SalesDates sales = new SalesDates();
+            sales.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("yes or no?",
+                          "Stock Management System",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            { return; }
+        }
+
+        private void searchAndViewItemsSummaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ItemsSummary search = new ItemsSummary();
+            search.Show();
+        }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("yes or no?",
+                          "Stock Management System",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            { return; }
+        }
+        //*****************************************************************//
+
+
         private void itemComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItemName = itemComboBox.Text;

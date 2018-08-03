@@ -13,10 +13,10 @@ namespace StockManagementSystemApplication.DAL
     {
         SqlConnection con = new SqlConnection(@"server=DESKTOP-ST75L53\SQLEXPRESS; database=Stock Management System;integrated security=true");
 
-        public bool Add(Items item)
+        public bool Add(Item item)
         {
             
-            string query = @"INSERT INTO Item VALUES ('" + item.Name + "','" + item.CatagoryId + "','" + item.CompanyId + "','" + item.RecordLevel + "')";
+            string query = @"INSERT INTO Item VALUES ('" + item.ItemName + "','" + item.CaegoryId + "','" + item.CompanyId + "','" + item.ReorderLevel + "')";
             SqlCommand commend = new SqlCommand(query, con);
             con.Open();
             bool isAdded = commend.ExecuteNonQuery() > 0;
@@ -26,7 +26,7 @@ namespace StockManagementSystemApplication.DAL
 
 
         }
-        public DataTable GetCompany(Items item)
+        public DataTable GetCompany(Item item)
         {
 
             SqlCommand command = new SqlCommand(@"Select * FROM Company", con);
@@ -38,7 +38,7 @@ namespace StockManagementSystemApplication.DAL
             return dt;
 
         }
-        public DataTable GetCatagory(Items item)
+        public DataTable GetCatagory(Item item)
         {
 
             SqlCommand command = new SqlCommand(@"Select * FROM Category", con);
@@ -70,7 +70,7 @@ namespace StockManagementSystemApplication.DAL
             con.Close();
             return dt;
         }
-        public int GetCatagoryId(Items  item)
+        public int GetCatagoryId(Item  item)
         {
             int itemId = 0;
             SqlCommand command = new SqlCommand(@"Select * From Category WHERE CategoryName='" + item.CategoryName + "'", con);
@@ -84,7 +84,7 @@ namespace StockManagementSystemApplication.DAL
             con.Close();
             return itemId;
         }
-        public int GetCompanyId(Items  item)
+        public int GetCompanyId(Item  item)
         {
             int itemId = 0;
             SqlCommand command = new SqlCommand(@"Select * From Company WHERE CompanyName='" + item.CompanyName + "'", con);

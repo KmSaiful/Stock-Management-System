@@ -23,10 +23,20 @@ namespace StockManagementSystemApplication.DAL
             return isAdded;
 
         }
+        public bool Update(Category category)
+        {
+
+            SqlCommand command = new SqlCommand(@"Update Category SET CategoryName='" + category.CategoryName + "'WHERE CategoryId='"+category.CategoryId+"'", connection);
+            connection.Open();
+            bool isAdded = command.ExecuteNonQuery() > 0;
+            connection.Close();
+            return isAdded;
+
+        }
         public DataTable Show()
         {
-           
-            SqlCommand command = new SqlCommand(@"SELECT * FROM Category", connection);
+
+            SqlCommand command = new SqlCommand(@"SELECT CategoryId SerialNo,CategoryName As Name FROM Category", connection);
             connection.Open();
 
             DataTable dt = new DataTable();

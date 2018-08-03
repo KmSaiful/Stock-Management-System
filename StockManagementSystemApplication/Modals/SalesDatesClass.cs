@@ -10,6 +10,8 @@ namespace StockManagementSystemApplication.Modals
     {
         public DateTime FromDateTime{ get; set; }
         public DateTime ToDateTime { get; set; }
+        public string ItemName { get; set; }
+        public long StockOutQuantity { get; set; }
 
     }
 }
