@@ -1,74 +1,74 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystemApplication.BLL;
-using StockManagementSystemApplication.DAL;
 using StockManagementSystemApplication.Modals;
+using StockManagementSystemApplication.UIL;
 
-namespace StockManagementSystemApplication.UIL
+namespace StockManagementSystemApplication
 {
-
-    public partial class CatagorySetup : Form
+    public partial class SalesDates : Form
     {
-        private Category catagory = new Category();
-        private CatagoryManager catagoryManager = new CatagoryManager();
-
-        public CatagorySetup()
+        SalesDatesManager salesDatesManager=new SalesDatesManager();
+        public SalesDates()
         {
             InitializeComponent();
-            catagorydataGridView.ForeColor = Color.Violet;
-            catagorydataGridView.DataSource = catagoryManager.Show();
-
         }
 
+
+
         //*****************************************************************//
-         private void companySetupToolStripMenuItem_Click(object sender, EventArgs e)
+        private void companySetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             CompanySetup company = new CompanySetup();
             company.Show();
         }
 
         private void categorySetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             CatagorySetup catagory = new CatagorySetup();
             catagory.Show();
         }
 
         private void itemSetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             ItemSetup items = new ItemSetup();
             items.Show();
         }
 
         private void stokInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Stock_In stockin = new Stock_In();
             stockin.Show();
         }
 
         private void stockOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Stock_Out stockout = new Stock_Out();
             stockout.Show();
         }
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             SalesDates sales = new SalesDates();
             sales.Show();
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             ItemsSummary search = new ItemsSummary();
             this.Close();
             search.Show();
@@ -76,35 +76,35 @@ namespace StockManagementSystemApplication.UIL
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             LogInPage logout = new LogInPage();
             logout.Show();
         }
 
         private void setupCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             CatagorySetup catagory = new CatagorySetup();
             catagory.Show();
         }
 
         private void setupCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             CompanySetup company = new CompanySetup();
             company.Show();
         }
 
         private void setupItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             ItemSetup items = new ItemSetup();
             items.Show();
         }
 
         private void stockInToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Stock_In stockin = new Stock_In();
             stockin.Show();
 
@@ -112,21 +112,21 @@ namespace StockManagementSystemApplication.UIL
 
         private void stockOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Stock_Out stockout = new Stock_Out();
             stockout.Show();
         }
 
         private void searchAndViewItemsSummaryToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             ItemsSummary summary = new ItemsSummary();
             summary.Show();
         }
 
         private void salesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             SalesDates sales = new SalesDates();
             sales.Show();
         }
@@ -146,7 +146,7 @@ namespace StockManagementSystemApplication.UIL
 
         private void searchAndViewItemsSummaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             ItemsSummary search = new ItemsSummary();
             search.Show();
         }
@@ -164,37 +164,34 @@ namespace StockManagementSystemApplication.UIL
             { return; }
         }
         //*****************************************************************//
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            catagory.CategoryName = CatagoryNameTextBox.Text;
-            
-            bool isAdded = catagoryManager.Add(catagory);
 
-            if (isAdded)
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            SalesDatesClass salesDatesClass=new SalesDatesClass();
+            salesDatesClass.FromDateTime = Convert.ToDateTime(fromDateTimePicker.Text);
+            salesDatesClass.ToDateTime = Convert.ToDateTime(toDateTimePicker.Text);
+            if (salesDatesClass.FromDateTime > salesDatesClass.ToDateTime)
             {
-                DataTable dt=new DataTable();
-                dt = (catagoryManager.Show()); 
-                catagorydataGridView.DataSource = dt;
-                CatagoryNameTextBox.Text=String.Empty;
-                SaveButton.Text = "Save";
+                MessageBox.Show("Enter valid range of date to search!");
                 return;
             }
-            MessageBox.Show("Failed!");
+            DataTable dt=new DataTable();
+            dt=salesDatesManager.GetSalesReport(salesDatesClass);
+     
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No Transanction taken place between" + salesDatesClass.FromDateTime + " to " +
+                                salesDatesClass.ToDateTime + "!");
+                return;
+            }
+            saleReportDataGridView.DataSource = dt;
 
         }
 
-        private void catagorydataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void SalesDates_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string editBox = catagorydataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            CatagoryNameTextBox.Text = editBox;
-            catagory.CategoryId = Convert.ToInt32(catagorydataGridView.Rows[e.RowIndex].Cells[0].Value);
-            SaveButton.Text = "Update";
+            if (Application.OpenForms.Count == 0) Application.Exit();
         }
-
-        private void CatagorySetup_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
     }
 }

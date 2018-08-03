@@ -30,85 +30,76 @@ namespace StockManagementSystemApplication
         //*****************************************************************//
         private void companySetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             CompanySetup company = new CompanySetup();
             company.Show();
         }
 
         private void categorySetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             CatagorySetup catagory = new CatagorySetup();
             catagory.Show();
         }
 
         private void itemSetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             ItemSetup items = new ItemSetup();
             items.Show();
         }
 
         private void stokInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Stock_In stockin = new Stock_In();
             stockin.Show();
         }
 
         private void stockOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Stock_Out stockout = new Stock_Out();
             stockout.Show();
         }
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide(); 
             SalesDates sales = new SalesDates();
             sales.Show();
         }
-
-        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            ItemsSummary search = new ItemsSummary();
-            this.Close();
-            search.Show();
-        }
-
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             LogInPage logout = new LogInPage();
             logout.Show();
         }
 
         private void setupCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             CatagorySetup catagory = new CatagorySetup();
             catagory.Show();
         }
 
         private void setupCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             CompanySetup company = new CompanySetup();
             company.Show();
         }
 
         private void setupItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             ItemSetup items = new ItemSetup();
             items.Show();
         }
 
         private void stockInToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Stock_In stockin = new Stock_In();
             stockin.Show();
 
@@ -116,21 +107,21 @@ namespace StockManagementSystemApplication
 
         private void stockOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Stock_Out stockout = new Stock_Out();
             stockout.Show();
         }
 
         private void searchAndViewItemsSummaryToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             ItemsSummary summary = new ItemsSummary();
             summary.Show();
         }
 
         private void salesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             SalesDates sales = new SalesDates();
             sales.Show();
         }
@@ -150,7 +141,7 @@ namespace StockManagementSystemApplication
 
         private void searchAndViewItemsSummaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             ItemsSummary search = new ItemsSummary();
             search.Show();
         }
@@ -227,6 +218,11 @@ namespace StockManagementSystemApplication
                 companyComboBox.DataSource = dt;
                
             }
+        }
+
+        private void ItemSetup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
        
     }

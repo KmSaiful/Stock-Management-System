@@ -319,7 +319,7 @@
             this.searchAndViewItemsSummaryToolStripMenuItem.Name = "searchAndViewItemsSummaryToolStripMenuItem";
             this.searchAndViewItemsSummaryToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
             this.searchAndViewItemsSummaryToolStripMenuItem.Text = "S&ummary";
-            this.searchAndViewItemsSummaryToolStripMenuItem.Click += new System.EventHandler(this.searchAndViewItemsSummaryToolStripMenuItem_Click);
+         //   this.searchAndViewItemsSummaryToolStripMenuItem.Click += new System.EventHandler(this.searchAndViewItemsSummaryToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem1
             // 
@@ -365,6 +365,7 @@
             this.Name = "ItemsSummary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scarch & View Item\'s Summary";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsSummary_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.itemsSummeryClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsSummeryClassBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemSummaryDataGridView)).EndInit();

@@ -391,6 +391,7 @@
             this.Name = "ItemSetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ItemSetup";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemSetup_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.catagoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);

@@ -234,6 +234,7 @@
             this.setupCompanyToolStripMenuItem.Name = "setupCompanyToolStripMenuItem";
             this.setupCompanyToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
             this.setupCompanyToolStripMenuItem.Text = "Setup &Company";
+            this.setupCompanyToolStripMenuItem.Click += new System.EventHandler(this.setupCompanyToolStripMenuItem_Click);
             // 
             // setupItemToolStripMenuItem
             // 
@@ -241,6 +242,7 @@
             this.setupItemToolStripMenuItem.Name = "setupItemToolStripMenuItem";
             this.setupItemToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
             this.setupItemToolStripMenuItem.Text = "Setup &Item";
+            this.setupItemToolStripMenuItem.Click += new System.EventHandler(this.setupItemToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
@@ -259,6 +261,7 @@
             this.stockInToolStripMenuItem1.Name = "stockInToolStripMenuItem1";
             this.stockInToolStripMenuItem1.Size = new System.Drawing.Size(145, 24);
             this.stockInToolStripMenuItem1.Text = "Stock &In";
+            this.stockInToolStripMenuItem1.Click += new System.EventHandler(this.stockInToolStripMenuItem1_Click);
             // 
             // stockOutToolStripMenuItem
             // 
@@ -266,6 +269,7 @@
             this.stockOutToolStripMenuItem.Name = "stockOutToolStripMenuItem";
             this.stockOutToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
             this.stockOutToolStripMenuItem.Text = "Stock &Out";
+            this.stockOutToolStripMenuItem.Click += new System.EventHandler(this.stockOutToolStripMenuItem_Click);
             // 
             // searchAndViewItemsSummaryToolStripMenuItem
             // 
@@ -274,6 +278,7 @@
             this.searchAndViewItemsSummaryToolStripMenuItem.Name = "searchAndViewItemsSummaryToolStripMenuItem";
             this.searchAndViewItemsSummaryToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
             this.searchAndViewItemsSummaryToolStripMenuItem.Text = "S&ummary";
+            this.searchAndViewItemsSummaryToolStripMenuItem.Click += new System.EventHandler(this.searchAndViewItemsSummaryToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem1
             // 
@@ -282,6 +287,7 @@
             this.salesToolStripMenuItem1.Name = "salesToolStripMenuItem1";
             this.salesToolStripMenuItem1.Size = new System.Drawing.Size(56, 23);
             this.salesToolStripMenuItem1.Text = "S&ales";
+            this.salesToolStripMenuItem1.Click += new System.EventHandler(this.salesToolStripMenuItem1_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -290,6 +296,7 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
             this.logOutToolStripMenuItem.Text = "&Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
@@ -297,6 +304,7 @@
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(50, 23);
             this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // companyBindingSource
             // 
@@ -316,6 +324,7 @@
             this.Name = "CompanySetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Company_Setup";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CompanySetup_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.CompanyDataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

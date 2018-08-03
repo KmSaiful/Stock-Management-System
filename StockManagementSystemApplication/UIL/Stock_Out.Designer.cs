@@ -173,6 +173,7 @@
             // AddButton
             // 
             this.AddButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.AddButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.AddButton.Location = new System.Drawing.Point(425, 254);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 32);
@@ -203,6 +204,7 @@
             // SellButton
             // 
             this.SellButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.SellButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.SellButton.Location = new System.Drawing.Point(488, 551);
             this.SellButton.Name = "SellButton";
             this.SellButton.Size = new System.Drawing.Size(75, 34);
@@ -518,6 +520,7 @@
             this.Name = "Stock_Out";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock_Out";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Stock_Out_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockOutDataGridView)).EndInit();

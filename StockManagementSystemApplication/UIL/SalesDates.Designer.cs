@@ -304,7 +304,7 @@
             this.searchAndViewItemsSummaryToolStripMenuItem.Name = "searchAndViewItemsSummaryToolStripMenuItem";
             this.searchAndViewItemsSummaryToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
             this.searchAndViewItemsSummaryToolStripMenuItem.Text = "S&ummary";
-            this.searchAndViewItemsSummaryToolStripMenuItem.Click += new System.EventHandler(this.searchAndViewItemsSummaryToolStripMenuItem_Click);
+         //   this.searchAndViewItemsSummaryToolStripMenuItem.Click += new System.EventHandler(this.searchAndViewItemsSummaryToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem1
             // 
@@ -352,6 +352,7 @@
             this.Name = "SalesDates";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Sales Between Two Dates";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SalesDates_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.saleReportDataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

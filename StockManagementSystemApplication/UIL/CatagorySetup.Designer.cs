@@ -297,7 +297,7 @@
             this.salesToolStripMenuItem1.Name = "salesToolStripMenuItem1";
             this.salesToolStripMenuItem1.Size = new System.Drawing.Size(56, 23);
             this.salesToolStripMenuItem1.Text = "S&ales";
-            this.salesToolStripMenuItem1.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            this.salesToolStripMenuItem1.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -342,6 +342,7 @@
             this.Name = "CatagorySetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategorySetup";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CatagorySetup_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.catagorydataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

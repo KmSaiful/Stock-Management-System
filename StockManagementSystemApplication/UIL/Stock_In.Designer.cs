@@ -436,6 +436,7 @@
             this.Name = "Stock_In";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockIn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Stock_In_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
