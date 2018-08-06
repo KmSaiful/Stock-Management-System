@@ -120,3 +120,4 @@ F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\Stock
 F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_In.resources
 F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_Out.resources
 F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csproj.GenerateResource.Cache
+F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.UIL.RegisterPage.resources

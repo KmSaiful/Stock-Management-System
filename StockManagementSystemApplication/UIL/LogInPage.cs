@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StockManagementSystemApplication.UIL;
 
 namespace StockManagementSystemApplication
 {
@@ -25,7 +26,7 @@ namespace StockManagementSystemApplication
         {
 
             LogInPageClass login = new LogInPageClass();
-            if (usernameTextBox.Text == null || usernameTextBox.Text.Length <4 || passwordTextBox.Text == null || passwordTextBox.Text.Length <8)
+            if (usernameTextBox.Text == null || usernameTextBox.Text.Length <4 || passwordTextBox.Text == null || passwordTextBox.Text.Length <6)
             {
                 MessageBox.Show("Ivalied Username or Password \n Please Try again");
                 return;
@@ -57,9 +58,11 @@ namespace StockManagementSystemApplication
            
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private void RegisterButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            RegisterPage registerPage = new RegisterPage();
+            registerPage.Show();
         }
 
        

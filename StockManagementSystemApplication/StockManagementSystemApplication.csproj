@@ -49,6 +49,7 @@
     <Compile Include="BLL\ItemsManager.cs" />
     <Compile Include="BLL\ItemsSummeryManager.cs" />
     <Compile Include="BLL\LogInPageManager.cs" />
+    <Compile Include="BLL\RegisterManager.cs" />
     <Compile Include="BLL\SalesDatesManager.cs" />
     <Compile Include="BLL\StockInManager.cs" />
     <Compile Include="BLL\StockOutManager.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="DAL\ItemsRepository.cs" />
     <Compile Include="DAL\ItemsSummeryRepository.cs" />
     <Compile Include="DAL\LogInPageRepository.cs" />
+    <Compile Include="DAL\RegisterRepository.cs" />
     <Compile Include="DAL\SalesDatesRepository.cs" />
     <Compile Include="DAL\StockInRepository.cs" />
     <Compile Include="DAL\StockOutRepository.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Modals\Items.cs" />
     <Compile Include="Modals\ItemsSummeryClass.cs" />
     <Compile Include="Modals\LogInPageClass.cs" />
+    <Compile Include="Modals\RegistrationInformation.cs" />
     <Compile Include="Modals\SalesDatesClass.cs" />
     <Compile Include="Modals\StockInClass.cs" />
     <Compile Include="Modals\StockOutClass.cs" />
@@ -116,6 +119,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIL\RegisterPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIL\RegisterPage.Designer.cs">
+      <DependentUpon>RegisterPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIL\SalesDates.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,9 +166,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UIL\ItemsSummary.resx">
       <DependentUpon>ItemsSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIL\RegisterPage.resx">
+      <DependentUpon>RegisterPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIL\SalesDates.resx">
       <DependentUpon>SalesDates.cs</DependentUpon>
@@ -210,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-symbol.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

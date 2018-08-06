@@ -34,7 +34,7 @@
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.LogInButton = new System.Windows.Forms.Button();
-            this.CloseButton = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,18 +89,18 @@
             this.LogInButton.UseVisualStyleBackColor = false;
             this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
-            // CloseButton
+            // RegisterButton
             // 
-            this.CloseButton.BackColor = System.Drawing.Color.DimGray;
-            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CloseButton.Location = new System.Drawing.Point(306, 95);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(85, 42);
-            this.CloseButton.TabIndex = 3;
-            this.CloseButton.Text = "Close";
-            this.CloseButton.UseVisualStyleBackColor = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.RegisterButton.BackColor = System.Drawing.Color.DimGray;
+            this.RegisterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RegisterButton.Location = new System.Drawing.Point(306, 95);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(85, 42);
+            this.RegisterButton.TabIndex = 3;
+            this.RegisterButton.Text = "Register";
+            this.RegisterButton.UseVisualStyleBackColor = false;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // pictureBox1
             // 
@@ -131,12 +131,13 @@
             this.ClientSize = new System.Drawing.Size(509, 257);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogInPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sotck management System (Log In)";
@@ -153,7 +154,7 @@
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button LogInButton;
-        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
     }
