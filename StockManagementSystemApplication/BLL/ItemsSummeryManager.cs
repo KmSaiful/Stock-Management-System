@@ -39,9 +39,45 @@ namespace StockManagementSystemApplication.BLL
 
         public DataTable GetDataTable(ItemsSummeryClass itemsSummeryClass)
         {
+            if (itemsSummeryClass.CompanyName != "----Select----" &&
+                itemsSummeryClass.CategoryName != "----Select----")
+            {
+                if (itemsSummeryClass.CompanyName != String.Empty && itemsSummeryClass.CategoryName != String.Empty)
+                {
+                    itemsSummeryClass.Operation = "AND";
+                }
+                else if (itemsSummeryClass.CompanyName != String.Empty || itemsSummeryClass.CategoryName != String.Empty)
+                {
+                    itemsSummeryClass.Operation = "OR";
+                }
+                else
+                {
+                    throw new Exception("Select a Company or Category to View Item summary");
+                }
+            }
+            else if (itemsSummeryClass.CompanyName == "----Select----" ||
+                     itemsSummeryClass.CategoryName == "----Select----")
+            {
+                if (itemsSummeryClass.CompanyName != String.Empty &&
+                    itemsSummeryClass.CategoryName != String.Empty)
+                {
+                    itemsSummeryClass.Operation = "OR";
+                }
+
+                else
+                {
+                    throw new Exception("Select a Company or Category to View Item summary");
+                }
+            }       
+           
+            else
+            {
+                throw new Exception("Select a Company or Category to View Item summary");
+            }
+
             DataTable dt = new DataTable();
             dt = itemsSummeryRepository.GetDataTable(itemsSummeryClass);
-
+            
             return dt;
         }
     }

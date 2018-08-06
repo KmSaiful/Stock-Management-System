@@ -22,14 +22,26 @@ namespace StockManagementSystemApplication
         Item item=new Item();
         StockOutClass stockOut = new StockOutClass();
         StockOutManager stockOutManager = new StockOutManager();
+       
         public Stock_Out()
         {
-            InitializeComponent();
            
+            InitializeComponent();
+
+
            
             categoryComboBox.DataSource = stockOutManager.GetCategoryTable(category);
             companyComboBox.DataSource = stockOutManager.GetCompanyTable(company);
             itemComboBox.DataSource = stockOutManager.GetItemTable(item);
+            categoryComboBox.SelectedItem = null;
+            companyComboBox.SelectedItem = null;
+            itemComboBox.SelectedItem = null;
+            categoryComboBox.Text = "------Select-------";
+            companyComboBox.Text = "------Select-------";
+            itemComboBox.Text = "------Select-------";
+
+            reorderLabel.Text = String.Empty;
+            quantityLabel.Text = String.Empty;
 
         }
 
@@ -175,20 +187,15 @@ namespace StockManagementSystemApplication
             DataTable dt = new DataTable();
             dt = stockOutManager.SetItemTable(selectedItemName);
 
-            itemComboBox.DataSource = dt;
-
             if (dt.Rows.Count == 0)
             {
 
                 long number = 0;
-                quantityLabel.Text = number.ToString();
-                MessageBox.Show("No Item Found!");
+                quantityLabel.Text = number.ToString();   
             }
             else
             {
-
-                itemComboBox.DataSource = dt;
-                reorderLabel.Text = dt.Rows[0]["ReorderLevel"].ToString();
+              reorderLabel.Text = dt.Rows[0]["ReorderLevel"].ToString();
 
                 if (dt.Rows[0]["AvailableQuantity"].ToString() == "")
                 {
@@ -206,8 +213,9 @@ namespace StockManagementSystemApplication
             {
 
                 string selectedCompanyName = companyComboBox.Text;
+                string selectedCategoryName = categoryComboBox.Text;
                 DataTable dt = new DataTable();
-                dt = stockOutManager.SetCompanyTable(selectedCompanyName);
+                dt = stockOutManager.SetCompanyTable(selectedCompanyName, selectedCategoryName);
          
                 itemComboBox.DataSource = dt;
           
@@ -216,12 +224,12 @@ namespace StockManagementSystemApplication
 
                     long number = 0;
                     quantityLabel.Text = number.ToString();
-                    MessageBox.Show("No Item Found!");
+                   // MessageBox.Show("No Item Found!");
                 }
                 else
                 {
             
-                    companyComboBox.DataSource = dt;
+                   // companyComboBox.DataSource = dt;
                     itemComboBox.DataSource = dt;
                     reorderLabel.Text = dt.Rows[0]["ReorderLevel"].ToString();
 
@@ -240,18 +248,21 @@ namespace StockManagementSystemApplication
                 string selectedCategoryName = categoryComboBox.Text;
                 DataTable dt = new DataTable();
                 dt = stockOutManager.SetCategoryTable(selectedCategoryName);
-
+                DataTable dt2 = stockOutManager.SetCompany(selectedCategoryName);
 
 
 
                 if (dt.Rows.Count == 0)
                 {
-                    MessageBox.Show("No Item Found!");
+
+                    long number = 0;
+                    quantityLabel.Text = number.ToString();
+                  //  MessageBox.Show("No Item Found!");
                 }
                 else
                 {
 
-                    companyComboBox.DataSource = dt;
+                    companyComboBox.DataSource = dt2;
                     itemComboBox.DataSource = dt;
                     reorderLabel.Text = dt.Rows[0]["ReorderLevel"].ToString();
                     if (dt.Rows[0]["AvailableQuantity"].ToString() == "")
@@ -268,8 +279,24 @@ namespace StockManagementSystemApplication
             private void AddButton_Click(object sender, EventArgs e)
             {
                  reorderMessageLabel.Text=String.Empty;
+                if (categoryComboBox.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a Category!!");
+                    return;
+                }
+                   
                 stockOut.CategoryName = categoryComboBox.Text;
+                  if (companyComboBox.SelectedItem == null)
+                  {
+                      MessageBox.Show("Please select a Company!!");
+                      return;
+                  }
                 stockOut.CompanyName = companyComboBox.Text;
+                  if (categoryComboBox.SelectedItem == null)
+                  {
+                      MessageBox.Show("Please select an Item!!");
+                      return;
+                  }
                 stockOut.ItemName = itemComboBox.Text;
                 bool isTrue = stockOutManager.Validation(stockOutQuantityTextBox.Text);
                 if (!isTrue)
@@ -290,8 +317,6 @@ namespace StockManagementSystemApplication
                     reorderMessageLabel.ForeColor=Color.Red;
                     reorderMessageLabel.Text = "Check the Stock of the Item!";
                 }
-
-
                 if (count == 1)
                 {
                     stockOutDataGridView.Columns.Add("CategoryName", "CategoryName");
@@ -301,10 +326,12 @@ namespace StockManagementSystemApplication
                     count++;
                 }
                 stockOutDataGridView.Rows.Add(stockOut.CategoryName, stockOut.CompanyName, stockOut.ItemName, stockOut.Quantity);
-
                 stockOutQuantityTextBox.Text = String.Empty;
-
-                //  bool isAdded = stockOutManager.StockOutDataAdded(stockOut);
+                categoryComboBox.Text = "------Select-------";
+                companyComboBox.Text = "------Select-------";
+                itemComboBox.Text = "------Select-------";
+                reorderLabel.Text=String.Empty;
+                quantityLabel.Text=String.Empty;
             }
 
             private void SellButton_Click(object sender, EventArgs e)
@@ -367,7 +394,7 @@ namespace StockManagementSystemApplication
                 }
                 if (isSuccessfull == true)
                 {
-                    MessageBox.Show("StockInSuccessfull!");
+                    MessageBox.Show("Stock Out Successfull!");
                 }
                 stockOutDataGridView.Rows.Clear();
 
@@ -400,7 +427,7 @@ namespace StockManagementSystemApplication
                 }
                 if (isSuccessfull == true)
                 {
-                    MessageBox.Show("StockInSuccessfull!");
+                    MessageBox.Show("Stock Out Successfull!");
                 }
                 stockOutDataGridView.Rows.Clear();
             }

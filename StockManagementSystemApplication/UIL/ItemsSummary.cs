@@ -26,6 +26,11 @@ namespace StockManagementSystemApplication
             InitializeComponent();
             companyComboBox.DataSource = itemsSummeryManager.GetCompanyTable(company);
             categoryComboBox.DataSource = itemsSummeryManager.GetCategoryTable(category);
+
+            categoryComboBox.SelectedItem = null;
+           companyComboBox.SelectedItem = null;
+           categoryComboBox.Text = "----Select----";
+           companyComboBox.Text = "----Select----"; 
             
         }
 
@@ -202,11 +207,13 @@ namespace StockManagementSystemApplication
 
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("No Category Found!");
+                categoryComboBox.Text = "-----No Category Found-----";
             }
             else
             {
                 categoryComboBox.DataSource = dt;
+                categoryComboBox.SelectedItem = null;
+                categoryComboBox.Text = "----Select----";
             }
         }
 
@@ -219,11 +226,12 @@ namespace StockManagementSystemApplication
 
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("No Company Found!");
+               companyComboBox.Text="-----No Company Found-----";
             }
             else
             {
-               categoryComboBox.DataSource = dt;
+              categoryComboBox.DataSource = dt;
+              
             }
         }
 

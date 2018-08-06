@@ -16,15 +16,25 @@ namespace StockManagementSystemApplication.BLL
         public static Regex regex = new Regex(@"[A-Za-z]");
         public bool Add(Company company)
         {
-            bool isAdded = false;
-            if (regex.IsMatch(company.CompanyName))
+            DataTable dt = companyRepository.Show();
+            foreach (DataRow check in dt.Rows)
             {
-               
-                isAdded = companyRepository.Add(company);
+                if (check["Name"].ToString() == company.CompanyName)
+                {
+                    return false;
+                }
             }
+            bool isAdded = companyRepository.Add(company);
             return isAdded;
         }
-
+        public bool Validation(string companyName)
+        {
+            if (regex.IsMatch(companyName))
+            {
+                return true;
+            }
+            return false;
+        }
         public DataTable Show()
         {
             DataTable dt = companyRepository.Show();

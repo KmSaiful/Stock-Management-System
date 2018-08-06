@@ -23,7 +23,10 @@ namespace StockManagementSystemApplication
             InitializeComponent();
             companyComboBox.DataSource = itemManager.GetCompany(item);
             catagoryComboBox.DataSource = itemManager.GetCatagory(item);
-
+            catagoryComboBox.SelectedItem = null;
+            companyComboBox.SelectedItem = null;
+            catagoryComboBox.Text = "------Select--------";
+            companyComboBox.Text = "------Select--------";
 
         }
 
@@ -167,57 +170,76 @@ namespace StockManagementSystemApplication
             item.ItemName = ItemNameTextBox.Text;
             item.CategoryName = catagoryComboBox.Text;
             item.CompanyName = companyComboBox.Text;
-            item.ReorderLevel = Convert.ToInt32(ReordertextBox.Text);
-            item.CaegoryId = itemManager.GetCatagoryId(item);
+            if (ReordertextBox.Text == String.Empty)
+            {
+                item.ReorderLevel = 0;
+            }
+            else if (itemManager.Validation(ReordertextBox.Text))
+            {
+                item.ReorderLevel = Convert.ToInt32(ReordertextBox.Text);
+            }
+            else
+            {
+                MessageBox.Show("Enter a valid number!!");
+                return;
+            }
+            item.CategoryId = itemManager.GetCatagoryId(item);
             item.CompanyId = itemManager.GetCompanyId(item);
 
             bool isAdded = itemManager.Add(item);
             if (isAdded)
             {
-                MessageBox.Show("Item Added Successfully!");
+                MessageBox.Show("Item Added");
+                catagoryComboBox.Text = "------Select--------";
+                companyComboBox.Text = "------Select--------";
+                ReordertextBox.Text=String.Empty;
+                ItemNameTextBox.Text=String.Empty;
             }
-
+            else
+            {
+                MessageBox.Show("Item already Registered!");
+            }
 
         }
 
         private void catagoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedCategoryName = catagoryComboBox.Text;
-            DataTable dt = new DataTable();
-            dt = itemManager.SetCategoryTable(selectedCategoryName);
+            //string selectedCategoryName = catagoryComboBox.Text;
+            //DataTable dt = new DataTable();
+            //dt = itemManager.SetCategoryTable(selectedCategoryName);
 
 
 
 
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("No Item Found!");
-            }
-            else
-            {
+            //if (dt.Rows.Count == 0)
+            //{
+            //    companyComboBox.Text = "----No Company  Set----";
+            //}
+            //else
+            //{
 
-                companyComboBox.DataSource = dt;
-                
-            }
+            //    companyComboBox.DataSource = dt;
+
+            //}
         }
 
         private void companyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedCompanyName = companyComboBox.Text;
-            DataTable dt = new DataTable();
-            dt = itemManager.SetCompanyTable(selectedCompanyName);
+            //string selectedCompanyName = companyComboBox.Text;
+            //DataTable dt = new DataTable();
+            //dt = itemManager.SetCompanyTable(selectedCompanyName);
 
-            if (dt.Rows.Count == 0)
-            {
+            //if (dt.Rows.Count == 0)
+            //{
 
-                MessageBox.Show("No Item Found!");
-            }
-            else
-            {
+            //    catagoryComboBox.Text = "----No Company  Setup----";
+            //}
+            //else
+            //{
 
-                companyComboBox.DataSource = dt;
-               
-            }
+            //    companyComboBox.DataSource = dt;
+
+            //}
         }
 
         private void ItemSetup_FormClosing(object sender, FormClosingEventArgs e)

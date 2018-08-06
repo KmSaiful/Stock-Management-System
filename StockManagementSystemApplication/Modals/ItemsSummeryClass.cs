@@ -15,6 +15,7 @@ namespace StockManagementSystemApplication.Modals
         public string CompanyName { get; set; }
         public string ItemName { get; set; }
         public long ReorderLevel { get; set; }
-        public long AvailableQuantity { get; set; } 
+        public long AvailableQuantity { get; set; }
+        public string Operation { get; set; }   
     }
 }

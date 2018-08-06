@@ -168,20 +168,30 @@ namespace StockManagementSystemApplication
         private void SaveButton_Click(object sender, EventArgs e)
         {
 
-            Company company = new Company();
             company.CompanyName =CompanyNameTextBox.Text;
-           
-
-            bool isAdded = companyManager.Add(company);
-
-            if (isAdded)
+            if (companyManager.Validation(company.CompanyName))
             {
-                DataTable dt = companyManager.Show();
-               CompanyDataGridView.DataSource = dt;
-                // categorySetupDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                return;
+                bool isAdded = companyManager.Add(company);
+                if (isAdded)
+                {
+                    DataTable dt = companyManager.Show();
+                    CompanyDataGridView.DataSource = dt;
+                    CompanyNameTextBox.Text = String.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Cateegory already Registered!");
+                }
             }
-            MessageBox.Show("Failed!");
+
+            else
+            {
+                MessageBox.Show("Invalid Category Name. Use atleast One Letter!!!");
+            }
+          
+
+          
+            
 
         }
 

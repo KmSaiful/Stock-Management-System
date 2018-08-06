@@ -69,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 95);
+            this.label1.Location = new System.Drawing.Point(33, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 19);
             this.label1.TabIndex = 0;
@@ -77,7 +77,7 @@
             // 
             // CatagoryNameTextBox
             // 
-            this.CatagoryNameTextBox.Location = new System.Drawing.Point(87, 94);
+            this.CatagoryNameTextBox.Location = new System.Drawing.Point(87, 67);
             this.CatagoryNameTextBox.Name = "CatagoryNameTextBox";
             this.CatagoryNameTextBox.Size = new System.Drawing.Size(334, 20);
             this.CatagoryNameTextBox.TabIndex = 0;
@@ -362,8 +362,8 @@
         private System.Windows.Forms.DataGridView catagorydataGridView;
         private System.Windows.Forms.BindingSource catagoryRepositoryBindingSource;
         private System.Windows.Forms.BindingSource catagoryBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+       // private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+      //  private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource catagoryBindingSource1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;

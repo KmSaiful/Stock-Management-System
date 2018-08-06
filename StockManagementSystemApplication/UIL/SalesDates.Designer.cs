@@ -67,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 82);
+            this.label1.Location = new System.Drawing.Point(38, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 19);
             this.label1.TabIndex = 0;
@@ -76,7 +76,7 @@
             // fromDateTimePicker
             // 
             this.fromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fromDateTimePicker.Location = new System.Drawing.Point(178, 82);
+            this.fromDateTimePicker.Location = new System.Drawing.Point(126, 82);
             this.fromDateTimePicker.Name = "fromDateTimePicker";
             this.fromDateTimePicker.Size = new System.Drawing.Size(304, 20);
             this.fromDateTimePicker.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(82, 117);
+            this.label2.Location = new System.Drawing.Point(58, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 0;
@@ -94,7 +94,7 @@
             // toDateTimePicker
             // 
             this.toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.toDateTimePicker.Location = new System.Drawing.Point(178, 117);
+            this.toDateTimePicker.Location = new System.Drawing.Point(126, 117);
             this.toDateTimePicker.Name = "toDateTimePicker";
             this.toDateTimePicker.Size = new System.Drawing.Size(304, 20);
             this.toDateTimePicker.TabIndex = 1;
@@ -102,7 +102,7 @@
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.SearchButton.Location = new System.Drawing.Point(407, 160);
+            this.SearchButton.Location = new System.Drawing.Point(355, 158);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 30);
             this.SearchButton.TabIndex = 2;
@@ -304,7 +304,7 @@
             this.searchAndViewItemsSummaryToolStripMenuItem.Name = "searchAndViewItemsSummaryToolStripMenuItem";
             this.searchAndViewItemsSummaryToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
             this.searchAndViewItemsSummaryToolStripMenuItem.Text = "S&ummary";
-         //   this.searchAndViewItemsSummaryToolStripMenuItem.Click += new System.EventHandler(this.searchAndViewItemsSummaryToolStripMenuItem_Click);
+            this.searchAndViewItemsSummaryToolStripMenuItem.Click += new System.EventHandler(this.searchAndViewItemsSummaryToolStripMenuItem1_Click);
             // 
             // salesToolStripMenuItem1
             // 

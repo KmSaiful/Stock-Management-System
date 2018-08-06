@@ -5,31 +5,39 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StockManagementSystemApplication.BLL
 {
     public class ItemsManager
     {
         ItemsRepository itemsRepository = new ItemsRepository();
+        public static Regex regex = new Regex(@"[A-Za-z \D]");
         public bool Add(Item item)
         {
-            //if (item == null && item.Name.Length > 3)
-            //{
-            //    throw new Exception("Invalied Item name");
-            //}
-            //if (item.CatagoryId == null && item.CatagoryId < 1)
-            //{
-            //    throw new Exception("Select a Catagory");
-            //}
-            //if (item.CompanyId == null && item.CompanyId < 1)
-            //{
-            //    throw new Exception("Select a Company");
-            //}
-            //if (item.RecordLevel == null)
-            //{
-            //    throw new Exception("Enter Reorder Lebel");
-            //}
+            DataTable dt = itemsRepository.GetItem(item);
+            foreach (DataRow check in dt.Rows)
+            {
+                if (check["ItemName"].ToString() == item.ItemName)
+                {
+                    return false;
+                }
+            }
+           if ((item.ItemName == null && item.ItemName.Length > 3))
+            {
+                throw new Exception("Invalied Item name");
+            }
+            if (item.CategoryId < 1)
+            {
+                throw new Exception("Select a Catagory");
+            }
+            if (item.CompanyId < 1)
+            {
+                throw new Exception("Select a Company");
+            }
+           
             bool isAdded = itemsRepository.Add(item);
             return isAdded;
 
@@ -70,6 +78,14 @@ namespace StockManagementSystemApplication.BLL
             return itemId;
         }
 
+        public  bool Validation(string reorderLevel)
+        {
+            if (regex.IsMatch(reorderLevel))
+            {
+                return false;
+            }
+            return true;
+        }
         
     }
 }

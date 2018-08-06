@@ -18,7 +18,6 @@ namespace StockManagementSystemApplication.UIL
         public CatagorySetup()
         {
             InitializeComponent();
-            catagorydataGridView.ForeColor = Color.Violet;
             catagorydataGridView.DataSource = catagoryManager.Show();
 
         }
@@ -167,19 +166,27 @@ namespace StockManagementSystemApplication.UIL
         private void SaveButton_Click(object sender, EventArgs e)
         {
             catagory.CategoryName = CatagoryNameTextBox.Text;
-            
-            bool isAdded = catagoryManager.Add(catagory);
-
-            if (isAdded)
+            if (catagoryManager.Validation(catagory.CategoryName))
             {
-                DataTable dt=new DataTable();
-                dt = (catagoryManager.Show()); 
-                catagorydataGridView.DataSource = dt;
-                CatagoryNameTextBox.Text=String.Empty;
-                SaveButton.Text = "Save";
-                return;
+                bool isAdded = catagoryManager.Add(catagory);
+
+                if (isAdded)
+                {
+                    DataTable dt = new DataTable();
+                    dt = (catagoryManager.Show());
+                    catagorydataGridView.DataSource = dt;
+                    CatagoryNameTextBox.Text = String.Empty;
+                    SaveButton.Text = "Save";
+                }
+                else
+                {
+                    MessageBox.Show("Cateegory already Registered!");
+                }
             }
-            MessageBox.Show("Failed!");
+            else
+            {
+                MessageBox.Show("Invalid Category Name. Use atleast One Letter!!!");
+            }
 
         }
 

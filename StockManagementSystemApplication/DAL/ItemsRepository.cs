@@ -16,7 +16,7 @@ namespace StockManagementSystemApplication.DAL
         public bool Add(Item item)
         {
             
-            string query = @"INSERT INTO Item VALUES ('" + item.ItemName + "','" + item.CaegoryId + "','" + item.CompanyId + "','" + item.ReorderLevel + "')";
+            string query = @"INSERT INTO Item VALUES ('" + item.ItemName + "','" + item.CategoryId + "','" + item.CompanyId + "','" + item.ReorderLevel + "')";
             SqlCommand commend = new SqlCommand(query, con);
             con.Open();
             bool isAdded = commend.ExecuteNonQuery() > 0;
@@ -24,6 +24,18 @@ namespace StockManagementSystemApplication.DAL
             return isAdded;
 
 
+
+        }
+        public DataTable GetItem(Item item)
+        {
+
+            SqlCommand command = new SqlCommand(@"Select * FROM Item", con);
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(dt);
+            con.Close();
+            return dt;
 
         }
         public DataTable GetCompany(Item item)

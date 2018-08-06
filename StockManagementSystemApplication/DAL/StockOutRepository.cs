@@ -23,7 +23,16 @@ namespace StockManagementSystemApplication.DAL
             connection.Close();
             return dt;
         }
-
+         public DataTable SetCompany(string selectedCategoryName)
+        {
+            SqlCommand command = new SqlCommand(@"Select DISTINCT CompanyName From vm_StockIn WHERE CategoryName='" + selectedCategoryName + "'", connection);
+            connection.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da=new SqlDataAdapter(command);
+            da.Fill(dt);
+            connection.Close();
+            return dt;
+        }
         public DataTable GetCompanyTable(Company company)
         {
             SqlCommand command = new SqlCommand(@"Select * From Company", connection);
@@ -55,9 +64,9 @@ namespace StockManagementSystemApplication.DAL
             connection.Close();
             return dt;
         }
-        public DataTable SetCompanyTable(string selectedCompanyName)
+        public DataTable SetCompanyTable(string selectedCompanyName, string selectedCategoryName)
         {
-            SqlCommand command = new SqlCommand(@"Select * From vm_StockIn WHERE CompanyName='" + selectedCompanyName + "'", connection);
+            SqlCommand command = new SqlCommand(@"Select * From vm_StockIn WHERE CompanyName='" + selectedCompanyName + "'  AND CategoryName='"+selectedCategoryName+"'", connection);
             connection.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(command);

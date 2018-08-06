@@ -8,7 +8,7 @@ namespace StockManagementSystemApplication.Modals
 {
     public class Item
     {
-        public int CaegoryId { get; set; }
+        public int CategoryId { get; set; }
         public int CompanyId { get; set; }
         public int ItemId { get; set; }
         public string CategoryName { get; set; }

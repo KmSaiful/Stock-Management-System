@@ -26,8 +26,8 @@ namespace StockManagementSystemApplication.DAL
         }
         public DataTable Show()
         {
-           
-            SqlCommand command = new SqlCommand(@"SELECT * FROM Company", connection);
+
+            SqlCommand command = new SqlCommand(@"SELECT CompanyId SerialNo,CompanyName Name  FROM Company", connection);
             connection.Open();
 
             DataTable dt = new DataTable();

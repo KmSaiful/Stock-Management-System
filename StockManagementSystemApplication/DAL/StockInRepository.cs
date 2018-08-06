@@ -55,12 +55,26 @@ namespace StockManagementSystemApplication.DAL
             connection.Close();
             return dt;
         }
-        public DataTable SetCompanyTable(string selectedCompanyName)
+        public DataTable SetCompanyTable(string selectedCompanyName,string selectedCategoryName)
         {
-            SqlCommand command = new SqlCommand(@"Select * From vm_StockIn WHERE CompanyName='" + selectedCompanyName + "'", connection);
+            SqlCommand command = new SqlCommand(@"Select *  From vm_StockIn WHERE CompanyName='" + selectedCompanyName + "' AND CategoryName='" + selectedCategoryName + "'", connection);
+         //   SqlCommand command2 = new SqlCommand(@"Select Distinct CompanyName From vm_StockIn WHERE CompanyName='" + selectedCompanyName + "' AND CategoryName='" + selectedCategoryName + "'",connection);
             connection.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(dt);
+          //  DataTable dt2=new DataTable();
+          //  SqlDataAdapter da2=new SqlDataAdapter(command2);
+          //  da2.Fill(dt2);
+            connection.Close();
+            return dt;
+        }
+        public DataTable SetCompany(string selectedCategoryName)
+        {
+            SqlCommand command = new SqlCommand(@"Select DISTINCT CompanyName From vm_StockIn WHERE CategoryName='" + selectedCategoryName + "'", connection);
+            connection.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da=new SqlDataAdapter(command);
             da.Fill(dt);
             connection.Close();
             return dt;
@@ -89,7 +103,7 @@ INNER JOIN Item On Item.ItemId=Transanction.ItemId
             {
                 connection.Close();
                 connection.Open();
-                SqlCommand command2 = new SqlCommand(@"Update Transanction Set AvailableQuantity='" + stockIn.AvailableQuantity + "'", connection);
+                SqlCommand command2 = new SqlCommand(@"Update Transanction Set AvailableQuantity='" + stockIn.AvailableQuantity + "'Where ItemId='" + stockIn.ItemId + "'", connection);
                 isUpdated = command2.ExecuteNonQuery() > 0;
             }
             else

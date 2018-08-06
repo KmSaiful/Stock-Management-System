@@ -20,20 +20,34 @@ namespace StockManagementSystemApplication.BLL
         public bool Add(Category category)
         {
             bool isAdded = false;
-            if (regex.IsMatch(category.CategoryName))
-            {
-                if (category.CategoryId == 0)
+             if (category.CategoryId == 0)
                 {
+                   DataTable dt=categorySetupRepository.Show();
+                    foreach (DataRow check in dt.Rows)
+                    {
+                        if (check["Name"].ToString() == category.CategoryName)
+                        {
+                            return false;
+                        }
+                    }
+
                     isAdded = categorySetupRepository.Add(category);
                 }
                 else
                 {
                     isAdded = categorySetupRepository.Update(category);
                 }
-            }
             return isAdded;
         }
-       
+
+        public bool Validation(string categoryName)
+        {
+            if (regex.IsMatch(categoryName))
+            {
+                return true;
+            }
+            return false;
+        }
 
         public DataTable Show()
         {

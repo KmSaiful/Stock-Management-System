@@ -59,7 +59,7 @@ namespace StockManagementSystemApplication.DAL
 
         public DataTable GetDataTable(ItemsSummeryClass itemsSummeryClass)
         {
-            SqlCommand command = new SqlCommand(@"Select * From vm_StockIn WHERE CompanyName='" + itemsSummeryClass.CompanyName + "'AND CategoryName='" + itemsSummeryClass.CategoryName + "'", connection);
+            SqlCommand command = new SqlCommand(@"Select * From vm_StockIn WHERE CompanyName='" + itemsSummeryClass.CompanyName + "'  "+itemsSummeryClass.Operation+" CategoryName='" + itemsSummeryClass.CategoryName + "'", connection);
             connection.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(command);

@@ -13,7 +13,7 @@ namespace StockManagementSystemApplication.BLL
 {
     class StockOutManager
     {
-        public static Regex regex = new Regex("[0-9]");
+        public static Regex regex = new Regex(@"\D");
         StockOutRepository stockOutRepository = new StockOutRepository();
         public DataTable GetCategoryTable(Category category)
         {
@@ -36,10 +36,10 @@ namespace StockManagementSystemApplication.BLL
             dt = stockOutRepository.SetCategoryTable(selectedCategoryName);
             return dt;
         }
-        public DataTable SetCompanyTable(string selectedCompanyName)
+        public DataTable SetCompanyTable(string selectedCompanyName, string selectedCategoryName)
         {
             DataTable dt = new DataTable();
-            dt = stockOutRepository.SetCompanyTable(selectedCompanyName);
+            dt = stockOutRepository.SetCompanyTable(selectedCompanyName,selectedCategoryName);
 
             return dt;
         }
@@ -81,16 +81,21 @@ namespace StockManagementSystemApplication.BLL
             int itemId = stockOutRepository.GetItemId(ItemName);
             return itemId;
         }
-      
 
+       public DataTable SetCompany(string selectedCategoryName)
+       {
+           DataTable dt = new DataTable();
+           dt = stockOutRepository.SetCompany(selectedCategoryName);
+
+           return dt;
+       }
         public bool Validation(string stockOutQuantity)
         {
-            bool isTrue = false;
             if (regex.IsMatch(stockOutQuantity))
             {
-                isTrue = true;
+               return false;
             }
-            return isTrue;
+            return true;
         }
     }
 }
