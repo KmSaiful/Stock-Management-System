@@ -121,3 +121,39 @@ F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\Stock
 F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_Out.resources
 F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csproj.GenerateResource.Cache
 F:\Tan2\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.UIL.RegisterPage.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.exe.config
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.exe
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.pdb
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.exe
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.pdb
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csprojResolveAssemblyReference.cache
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.UIL.CatagorySetup.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.CompanySetup.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.HomePage.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.ItemSetup.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.LogInPage.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Properties.Resources.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.ItemsSummary.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.UIL.RegisterPage.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.SalesDates.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_In.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_Out.resources
+G:\Web App Develop .Net Class Contents\Project\Stock-Management-System(Final)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csproj.GenerateResource.Cache
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.exe.config
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.exe
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.pdb
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.exe
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\bin\Debug\StockManagementSystemApplication.pdb
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csprojResolveAssemblyReference.cache
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.UIL.CatagorySetup.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.CompanySetup.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.HomePage.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.ItemSetup.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.LogInPage.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Properties.Resources.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.ItemsSummary.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.UIL.RegisterPage.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.SalesDates.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_In.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.Stock_Out.resources
+H:\Web App Develop .Net Class Contents\Project\SMS(Avant-Garde)\Stock-Management-System\StockManagementSystemApplication\obj\Debug\StockManagementSystemApplication.csproj.GenerateResource.Cache

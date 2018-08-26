@@ -10,7 +10,7 @@ namespace StockManagementSystemApplication.DAL
 {
     class RegisterRepository
     {
-         SqlConnection connection = new SqlConnection(@"server=DESKTOP-ST75L53\SQLEXPRESS;database=Stock Management System;integrated security=true");
+        SqlConnection connection = new SqlConnection(@"server=DESKTOP-OMV5TK2\SQLEXPRESS;database=Stock Management System;integrated security=true");
        
         public bool Add(RegistrationInformation registrationInformation)
         {
@@ -30,6 +30,7 @@ namespace StockManagementSystemApplication.DAL
             SqlDataReader dr = command.ExecuteReader();
             if (dr.HasRows)
             {
+                connection.Close();
                 return false;
             }
             connection.Close();

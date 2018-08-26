@@ -22,6 +22,8 @@ namespace StockManagementSystemApplication.UIL
         RegisterManager registerManager = new RegisterManager();
         private void RegisterButton_Click(object sender, EventArgs e)
         {
+          
+
             if (registerManager.ValidateName(firstNameTextBox.Text))
             {
                 registrationInformation.FirstName = firstNameTextBox.Text;
@@ -85,6 +87,11 @@ namespace StockManagementSystemApplication.UIL
                 homePage.Show();
 
             }
+            firstNameLabel.Text = String.Empty;
+            lastNameTextBox.Text = String.Empty;
+            userNameLabel.Text = String.Empty;
+            passwordLabel.Text = String.Empty;
+            emailLabel.Text = String.Empty;
 
         }
 

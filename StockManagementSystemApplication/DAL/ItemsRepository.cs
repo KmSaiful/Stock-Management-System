@@ -11,7 +11,7 @@ namespace StockManagementSystemApplication.DAL
 {
     public class ItemsRepository
     {
-        SqlConnection con = new SqlConnection(@"server=DESKTOP-ST75L53\SQLEXPRESS; database=Stock Management System;integrated security=true");
+        SqlConnection con = new SqlConnection(@"server=DESKTOP-OMV5TK2\SQLEXPRESS;database=Stock Management System;integrated security=true");
 
         public bool Add(Item item)
         {

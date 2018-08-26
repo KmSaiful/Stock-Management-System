@@ -13,7 +13,7 @@ namespace StockManagementSystemApplication.DAL
 {
     public class CompanyRepository
     {
-        SqlConnection connection = new SqlConnection(@"server=DESKTOP-ST75L53\SQLEXPRESS;database=Stock Management System;integrated security=true");
+        SqlConnection connection = new SqlConnection(@"server=DESKTOP-OMV5TK2\SQLEXPRESS;database=Stock Management System;integrated security=true");
         public bool Add(Company company)
         {
            
